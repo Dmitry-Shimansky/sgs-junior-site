@@ -1,15 +1,14 @@
 # SGS Junior — project handover
 
-Prepared on 14 September 2026. Both approved comparison designs are preserved as independently addressable pages in one project. The site is in German and uses the user-supplied SGS products.
+Prepared on 14 September 2026. The site has a single home page at `/`. The site is in German and uses the user-supplied SGS products.
 
 ## Design overview
 
 | Route | Visual direction | Hero headline |
 | --- | --- | --- |
-| `/` | Bright blue and white, product cards | Für kleine Helden. Für jeden Tag. |
-| `/design-2` | Navy and yellow, large typography, alternating product sections | Anziehen. Losziehen. |
+| `/` | Light page with navy text and gold buttons, product set cards | SGS Junior – Komfort & Spaß für aktive Jungs! |
 
-The second design uses CSS crops of the same original product images in its hero. The full product packs are also displayed. Neither design requires generated model photography.
+The hero collage uses CSS crops of the original product images. The full product packs are also displayed. The design does not require generated model photography.
 
 ## Included assets
 
@@ -28,11 +27,11 @@ All shopping buttons use the supplied link: <https://amzn.eu/d/01feguzW>.
 
 The listing was read on 13 September 2026 and resolved to Amazon Germany product `B0C7JKZP46`. The copy uses 95% cotton, 5% elastane, a 10-pack, machine washing, and EU children’s sizes 98–176. Detailed source and editorial notes are in `german-website-copy.md`. This handover records the earlier check; it is not a new availability or price check.
 
-All three product presentations currently lead to that same listing. If separate variant URLs are supplied later, update the product data and shopping links in both pages. Prices and stock are displayed by Amazon.
+All three product presentations currently lead to that same listing. If separate variant URLs are supplied later, update the product data in `src/entities/product/model/data.ts`. Prices and stock are displayed by Amazon.
 
 ## Maintenance notes
 
-- Both pages use the shared root layout. Changes to `app/globals.css` should be checked on both routes; the second design also has a scoped CSS module.
+- The home page is built from FSD layers in `src/`; page-specific styles are CSS modules next to each component, and `app/globals.css` holds only base styles.
 - The source project retains the starter UI library for future additions, although the current pages are mostly plain React and CSS.
 - Run the commands in `README.md` after changes. The static export is rebuilt into `dist/client`.
 - The source archive excludes local Git internals, installed dependencies, build output, caches, and temporary work. All source code, images, configuration, and project documents are included.
