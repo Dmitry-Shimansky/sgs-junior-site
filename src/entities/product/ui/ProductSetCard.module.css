@@ -1,0 +1,52 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 2.6em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--sgs-ink, #111827);
+}
+.subtitle {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--sgs-muted, #4b5563);
+}
+.photo {
+  width: 100%;
+  margin-top: 12px;
+  aspect-ratio: 1537 / 700;
+  overflow: hidden;
+}
+/* Crop the baked-in heading and footnote of the product shots. */
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 46%;
+}
+.composition {
+  margin-top: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--sgs-ink, #111827);
+  margin-bottom: 0;
+}
+.action {
+  margin-top: auto;
+  padding-top: 14px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.action > * {
+  width: min(100%, 190px);
+}

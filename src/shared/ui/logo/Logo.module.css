@@ -1,0 +1,35 @@
+/* The source logo is white on black: invert it and crop to the mark + lettering. */
+.logo {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.logo img {
+  position: absolute;
+  max-width: none;
+  height: auto;
+  filter: invert(1);
+}
+.md {
+  width: 78px;
+  height: 46px;
+}
+.md img {
+  width: 160px;
+  top: -24px;
+  left: -40px;
+}
+.lg {
+  width: 116px;
+  height: 64px;
+}
+.lg img {
+  width: 237px;
+  top: -34px;
+  left: -60px;
+}
+.logo:focus-visible {
+  outline: 3px solid var(--sgs-gold, #d6a531);
+  outline-offset: 4px;
+}

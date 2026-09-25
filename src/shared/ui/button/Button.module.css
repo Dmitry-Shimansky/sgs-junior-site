@@ -1,0 +1,32 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--sgs-gold, #d6a531);
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgb(214 165 49 / 0.28);
+  transition: background-color 0.2s, transform 0.2s;
+}
+.button:hover {
+  background: var(--sgs-gold-hover, #c39322);
+  transform: translateY(-1px);
+}
+.button:focus-visible {
+  outline: 3px solid var(--sgs-navy, #13254a);
+  outline-offset: 3px;
+}
+.md {
+  min-height: 46px;
+  padding: 12px 22px;
+  font-size: 1rem;
+}
+.lg {
+  min-height: 48px;
+  padding: 12px 24px;
+  font-size: 1.05rem;
+}

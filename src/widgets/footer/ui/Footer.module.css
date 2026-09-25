@@ -1,0 +1,28 @@
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+  padding: 10px 0 18px;
+  border-top: 1px solid var(--sgs-border);
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 32px;
+  font-size: 0.95rem;
+  color: var(--sgs-navy);
+}
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.links a:hover {
+  color: var(--sgs-gold-hover);
+}
+.copyright {
+  color: var(--sgs-muted);
+}

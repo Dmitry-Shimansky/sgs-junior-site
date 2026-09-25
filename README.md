@@ -4,10 +4,25 @@ A German-language website for SGS Junior boys’ underwear, with two complete re
 
 | Design | Route | Main files |
 | --- | --- | --- |
-| Blue and white — “Für kleine Helden. Für jeden Tag.” | `/` | `app/page.tsx`, `app/globals.css` |
+| Light, navy and gold — “SGS Junior – Komfort & Spaß für aktive Jungs!” | `/` | `app/page.tsx` → `src/views/home` (FSD, see below) |
 | Navy and yellow — “Anziehen. Losziehen.” | `/design-2` | `app/design-2/page.tsx`, `app/design-2/design-two.module.css` |
 
 The site uses React 19, TypeScript, and Vinext (Next.js-compatible routing on Vite). It builds a static site. Orders, payment, size selection, and customer service are handled on Amazon through the supplied product link; this project does not use an Amazon API or provide its own checkout.
+
+## Home page structure (Feature-Sliced Design)
+
+The `/` page lives in `src/` and follows FSD layers; each slice exposes a public API through its `index.ts`. `app/` is the Next-style routing layer and holds global styles.
+
+```
+src/
+  views/home            – page composition (FSD "pages" layer; renamed to avoid clashing with Next routing)
+  widgets/              – header, hero, product-sets, product-about, footer
+  features/buy-on-amazon – Amazon call-to-action button
+  entities/product      – product set data, types and ProductSetCard
+  shared/               – config (Amazon URL, navigation) and UI kit (ButtonLink, Logo, Container)
+```
+
+Product sets, feature texts and the Amazon link are edited in `src/entities/product/model/data.ts` and `src/shared/config`.
 
 ## Run locally
 

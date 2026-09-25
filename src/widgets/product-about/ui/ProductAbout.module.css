@@ -1,0 +1,35 @@
+.title {
+  margin-bottom: 18px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--sgs-navy);
+}
+.intro,
+.item p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--sgs-ink);
+}
+.list {
+  display: grid;
+  gap: 16px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.badge {
+  flex-shrink: 0;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--sgs-green);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}

@@ -1,0 +1,28 @@
+.header {
+  background: #fff;
+}
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 66px;
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 36px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--sgs-navy);
+}
+.nav a:hover {
+  color: var(--sgs-gold-hover);
+}
+@media (max-width: 640px) {
+  .nav {
+    gap: 6px 16px;
+    font-size: 0.875rem;
+  }
+}

@@ -1,0 +1,17 @@
+.title {
+  margin-bottom: 18px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--sgs-navy);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
