@@ -33,7 +33,7 @@ All three product presentations currently lead to that same listing. If separate
 
 - The home page is built from FSD layers in `src/`; page-specific styles are CSS modules next to each component, and `app/globals.css` holds only base styles.
 - The source project retains the starter UI library for future additions, although the current pages are mostly plain React and CSS.
-- Run the commands in `README.md` after changes. The static export is rebuilt into `dist/client`.
+- Run the commands in `README.md` after changes. The static export is rebuilt into `out`.
 - The source archive excludes local Git internals, installed dependencies, build output, caches, and temporary work. All source code, images, configuration, and project documents are included.
-- Repository preparation updated the project name and package-manager declaration, replaced the starter’s Cloudflare-only start command with `vinext start`, added a typecheck command, and corrected the metadata hostname to the existing SGS site. The page designs and product copy are preserved.
+- Repository preparation updated the project name and package-manager declaration, replaced the starter’s Cloudflare-only start command with `vinext start`, added a typecheck command, and corrected the metadata hostname to the existing SGS site. The page designs and product copy are preserved. The project was later migrated from Vinext to Next.js; the static export now goes to `out/`.
 - No remote repository is configured in this handover, and no Git push or website redeployment is part of preparing the archive.

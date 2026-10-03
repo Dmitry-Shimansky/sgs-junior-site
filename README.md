@@ -6,7 +6,7 @@ A German-language website for SGS Junior boys’ underwear, with a responsive ho
 | --- | --- | --- |
 | Light, navy and gold — “SGS Junior – Komfort & Spaß für aktive Jungs!” | `/` | `app/page.tsx` → `src/views/home` (FSD, see below) |
 
-The site uses React 19, TypeScript, and Vinext (Next.js-compatible routing on Vite). It builds a static site. Orders, payment, size selection, and customer service are handled on Amazon through the supplied product link; this project does not use an Amazon API or provide its own checkout.
+The site uses React 19, TypeScript, and Next.js (App Router). It builds a static site (`output: 'export'`). Orders, payment, size selection, and customer service are handled on Amazon through the supplied product link; this project does not use an Amazon API or provide its own checkout.
 
 ## Home page structure (Feature-Sliced Design)
 
@@ -53,13 +53,13 @@ pnpm start
 
 TypeScript checks and the production build pass. The existing full-project lint command reports findings in the included starter components and flags native `<img>` elements used by the static pages. These are recorded in `docs/validation.md`; the lint command does not currently exit successfully.
 
-`pnpm start` serves the production build at `http://localhost:3000` by default. Stop it with Ctrl+C. To use a different port or restrict it to this computer:
+`pnpm start` serves the static export in `out/` with [`serve`](https://github.com/vercel/serve) at `http://localhost:3000` by default (`next start` does not work with static export). Stop it with Ctrl+C. To use a different port:
 
 ```sh
-pnpm start --port 4173 --hostname 127.0.0.1
+pnpm start --listen 4173
 ```
 
-Static hosting files are generated in **`dist/client`**, including `index.html`, `404.html`, JavaScript, CSS, and images. Configure the host to serve `404.html` for missing pages. The assets use root-relative URLs, so the current configuration expects the site at a domain root, rather than a repository subpath. Generated files are excluded from Git; rebuild them from source when deploying.
+Static hosting files are generated in **`out`**, including `index.html`, `404.html`, JavaScript, CSS, and images. Configure the host to serve `404.html` for missing pages. The assets use root-relative URLs, so the current configuration expects the site at a domain root, rather than a repository subpath. Generated files are excluded from Git; rebuild them from source when deploying.
 
 ## Project contents
 
@@ -79,7 +79,7 @@ components/ui/               Included UI components from the project starter
 hooks/, lib/                 Starter helpers
 .openai/hosting.json          Existing Sites hosting project association
 next.config.ts               Static export configuration
-vite.config.ts               Vite/Vinext configuration
+postcss.config.mjs           Tailwind CSS PostCSS setup
 package.json                 Commands and package versions
 pnpm-lock.yaml               Dependency lockfile
 ```
