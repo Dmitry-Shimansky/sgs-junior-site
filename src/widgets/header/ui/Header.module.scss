@@ -1,6 +1,10 @@
+@use '../../../styles/abstract' as abstract;
+@use '../../../styles/base/typography' as typo;
+
 .header {
-  background: #fff;
+  background: var(--color-bg);
 }
+
 .inner {
   display: flex;
   align-items: center;
@@ -8,20 +12,16 @@
   gap: 24px;
   min-height: 66px;
 }
+
 .nav {
+  @include typo.text-medium-16;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 8px 36px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--sgs-navy);
-}
-.nav a:hover {
-  color: var(--sgs-gold-hover);
-}
-@media (max-width: 640px) {
-  .nav {
+  color: var(--color-heading);
+
+  @include abstract.media-down(sm) {
     gap: 6px 16px;
     font-size: 0.875rem;
   }

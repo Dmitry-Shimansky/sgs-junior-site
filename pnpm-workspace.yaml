@@ -1,4 +1,5 @@
 allowBuilds:
+  '@parcel/watcher': false
   esbuild: set this to true or false
   sharp: true
   workerd: set this to true or false

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import '@/src/styles/index.scss';
 export const metadata: Metadata = {
  metadataBase:new URL('https://sgs-junior.tohtieva-juhar.chatgpt.site'),
  title:'SGS Junior – Bequeme Jungen-Boxershorts im 10er-Pack',

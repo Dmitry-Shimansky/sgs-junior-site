@@ -1,0 +1,36 @@
+@use '../../../styles/abstract' as abstract;
+
+.page {
+  min-height: 100vh;
+  padding: 64px 16px;
+  background: var(--color-page-bg);
+
+  @include abstract.media-down(sm) {
+    padding: 0;
+  }
+}
+
+.shell {
+  max-width: abstract.$shell-max-width;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: abstract.$radius-lg;
+  background: var(--color-bg);
+  box-shadow: 0 24px 60px rgb(19 37 74 / 0.08);
+
+  @include abstract.media-down(sm) {
+    border-radius: 0;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  gap: 44px;
+  padding-top: 44px;
+  padding-bottom: 44px;
+
+  @include abstract.media-down(xl) {
+    grid-template-columns: 1fr;
+  }
+}

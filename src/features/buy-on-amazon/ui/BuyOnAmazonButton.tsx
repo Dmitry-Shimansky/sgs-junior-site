@@ -1,6 +1,6 @@
 import { ShoppingCart } from 'lucide-react';
-import { AMAZON_URL } from '@/src/shared/config';
-import { ButtonLink } from '@/src/shared/ui';
+import { AMAZON_URL } from '@/src/shared/constants';
+import { Button } from '@/src/shared/ui';
 
 type BuyOnAmazonButtonProps = {
   href?: string;
@@ -10,12 +10,28 @@ type BuyOnAmazonButtonProps = {
   withIcon?: boolean;
 };
 
-export function BuyOnAmazonButton({ href = AMAZON_URL, size = 'md', className, label = 'Auf Amazon kaufen', withIcon = true }: BuyOnAmazonButtonProps) {
+export const BuyOnAmazonButton = (props: BuyOnAmazonButtonProps) => {
+  const {
+    href = AMAZON_URL,
+    size = 'md',
+    className,
+    label = 'Auf Amazon kaufen',
+    withIcon = true,
+  } = props;
+
   return (
-    <ButtonLink href={href} target="_blank" rel="noopener noreferrer" size={size} className={className}>
+    <Button
+      href={href}
+      external
+      size={size}
+      className={className}
+      icon={
+        withIcon && (
+          <ShoppingCart size={20} strokeWidth={2} aria-hidden="true" />
+        )
+      }
+    >
       {label}
-      {withIcon && <ShoppingCart size={20} strokeWidth={2} aria-hidden="true" />}
-      <span className="sr-only"> (Amazon, öffnet in einem neuen Tab)</span>
-    </ButtonLink>
+    </Button>
   );
-}
+};

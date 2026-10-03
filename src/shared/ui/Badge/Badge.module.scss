@@ -1,0 +1,19 @@
+@use '../../../styles/abstract' as abstract;
+@use '../../../styles/base/typography' as typo;
+
+.badge {
+  @include typo.text-small-semi;
+  flex-shrink: 0;
+  padding: 5px 14px;
+  border-radius: abstract.$radius-pill;
+  color: var(--color-on-accent);
+  white-space: nowrap;
+}
+
+.success {
+  background: var(--color-success);
+}
+
+.accent {
+  background: var(--color-accent);
+}

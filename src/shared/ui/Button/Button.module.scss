@@ -1,0 +1,77 @@
+@use '../../../styles/abstract' as abstract;
+
+@mixin button-states($bg, $hover-bg, $text) {
+  background: $bg;
+  color: $text;
+
+  &:hover:not(:disabled) {
+    background: $hover-bg;
+    transform: translateY(-1px);
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: abstract.$radius-sm;
+  font-family: inherit;
+  font-weight: abstract.$font-weight-500;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    transform 0.2s;
+
+  &:focus-visible {
+    @include abstract.focus-ring(var(--color-heading));
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  @include button-states(
+    var(--color-accent),
+    var(--color-accent-hover),
+    var(--color-on-accent)
+  );
+  box-shadow: 0 6px 16px rgb(214 165 49 / 0.28);
+}
+
+.outline {
+  @include button-states(
+    transparent,
+    var(--color-accent),
+    var(--color-accent-hover)
+  );
+  // Inset shadow instead of a border keeps both variants the same size.
+  box-shadow: inset 0 0 0 1px currentColor;
+
+  &:hover:not(:disabled) {
+    color: var(--color-on-accent);
+  }
+}
+
+.md {
+  min-height: 46px;
+  padding: 12px 22px;
+  font-size: 1rem;
+}
+
+.lg {
+  min-height: 48px;
+  padding: 12px 24px;
+  font-size: 1.05rem;
+}
+
+.fullWidth {
+  width: 100%;
+}

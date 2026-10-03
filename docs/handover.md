@@ -31,7 +31,7 @@ All three product presentations currently lead to that same listing. If separate
 
 ## Maintenance notes
 
-- The home page is built from FSD layers in `src/`; page-specific styles are CSS modules next to each component, and `app/globals.css` holds only base styles.
+- The home page is built from FSD layers in `src/`; component styles are SCSS modules next to each component, built on the shared design system in `src/styles` (palette, typography, mixins, themes). `app/globals.css` holds only the font, Tailwind and the starter UI tokens.
 - The source project retains the starter UI library for future additions, although the current pages are mostly plain React and CSS.
 - Run the commands in `README.md` after changes. The static export is rebuilt into `out`.
 - The source archive excludes local Git internals, installed dependencies, build output, caches, and temporary work. All source code, images, configuration, and project documents are included.

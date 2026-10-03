@@ -1,17 +1,37 @@
 import type { CSSProperties } from 'react';
 import { BuyOnAmazonButton } from '@/src/features/buy-on-amazon';
 import { Container } from '@/src/shared/ui';
-import styles from './Hero.module.css';
+import styles from './Hero.module.scss';
 
 // Close-ups cut from the existing product shots (image-space px of a 1537×1023 source).
 const TILES = [
-  { className: styles.tileTopLeft, src: '/images/bunter-mix.jpg', cx: 175, cy: 330 },
-  { className: styles.tileTopRight, src: '/images/klassischer-mix.png', cx: 768, cy: 325 },
-  { className: styles.tileBottomLeft, src: '/images/bunter-mix.jpg', cx: 478, cy: 672 },
-  { className: styles.tileBottomRight, src: '/images/klassischer-mix.png', cx: 1358, cy: 665 },
+  {
+    className: styles.tileTopLeft,
+    src: '/images/bunter-mix.jpg',
+    cx: 175,
+    cy: 330,
+  },
+  {
+    className: styles.tileTopRight,
+    src: '/images/klassischer-mix.png',
+    cx: 768,
+    cy: 325,
+  },
+  {
+    className: styles.tileBottomLeft,
+    src: '/images/bunter-mix.jpg',
+    cx: 478,
+    cy: 672,
+  },
+  {
+    className: styles.tileBottomRight,
+    src: '/images/klassischer-mix.png',
+    cx: 1358,
+    cy: 665,
+  },
 ];
 
-export function Hero() {
+export const Hero = () => {
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
       <Container className={styles.inner}>
@@ -50,4 +70,4 @@ export function Hero() {
       </Container>
     </section>
   );
-}
+};

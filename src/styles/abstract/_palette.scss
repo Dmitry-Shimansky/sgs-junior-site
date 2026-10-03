@@ -1,0 +1,25 @@
+// Keys are quoted: bare names like navy or gold would be parsed as CSS colours.
+$colors: (
+  'navy': (
+    500: #13254a,
+  ),
+  'gold': (
+    500: #d6a531,
+    700: #c39322,
+    900: #b87500,
+  ),
+  'success': (
+    500: #4caf50,
+  ),
+  'dark': (
+    300: #4b5563,
+    500: #1f2937,
+  ),
+  'light': (
+    100: #ffffff,
+    300: #f1f3f7,
+    500: #eef1f6,
+    700: #e9ecf2,
+    900: #e3e7ee,
+  ),
+);

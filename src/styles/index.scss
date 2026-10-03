@@ -1,0 +1,3 @@
+// Global entry point: imported once from app/layout.tsx.
+// CSS modules must @use './abstract' and './base/typography' only — they emit no CSS.
+@use './base';

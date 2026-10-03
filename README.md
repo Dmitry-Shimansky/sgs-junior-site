@@ -18,10 +18,37 @@ src/
   widgets/              – header, hero, product-sets, product-about, footer
   features/buy-on-amazon – Amazon call-to-action button
   entities/product      – product set data, types and ProductSetCard
-  shared/               – config (Amazon URL, navigation) and UI kit (ButtonLink, Logo, Container)
+  shared/constants      – Amazon URL, section anchors, navigation
+  shared/lib            – small helpers (external-link attributes)
+  shared/ui             – UI kit: Button, TextLink, Badge, Section, Container, Logo
+  styles/               – SCSS design system (see below)
 ```
 
-Product sets, feature texts and the Amazon link are edited in `src/entities/product/model/data.ts` and `src/shared/config`.
+Each component in `shared/ui` lives in its own PascalCase folder with a `.module.scss` file next to it, and everything is exported from `src/shared/ui/index.ts`. Use `Button` for every call-to-action: it renders an `<a>` when `href` is passed (add `external` for new-tab links) and a `<button>` otherwise. It supports `variant` (`primary`, `outline`), `size` (`md`, `lg`), `icon` and `fullWidth`.
+
+### Styles
+
+```
+src/styles/
+  index.scss            – global entry, imported once in app/layout.tsx
+  abstract/             – palette + palette() function, variables, mixins (media-down, focus-ring, …)
+  base/                 – themes (CSS colour variables), typography mixins, global base styles
+```
+
+CSS modules use the abstract layer and the typography mixins, and read colours from the theme variables:
+
+```scss
+@use '../../../styles/abstract' as abstract;
+@use '../../../styles/base/typography' as typo;
+
+.title {
+  @include typo.h2;
+  color: var(--color-heading);
+  @include abstract.media-down(sm) { … }
+}
+```
+
+Product sets, feature texts and the Amazon link are edited in `src/entities/product/model/data.ts` and `src/shared/constants`.
 
 ## Run locally
 
@@ -67,7 +94,7 @@ Static hosting files are generated in **`out`**, including `index.html`, `404.ht
 app/
   layout.tsx                 German language, shared metadata and favicon
   page.tsx                   Route entry; renders src/views/home
-  globals.css                Global base styles and font
+  globals.css                Font, Tailwind and starter UI tokens (site styles: src/styles)
 src/                         Home page in FSD layers (see above)
 public/
   favicon.svg
@@ -86,10 +113,10 @@ pnpm-lock.yaml               Dependency lockfile
 
 ## Edit the website
 
-- **Amazon link and navigation:** edit `src/shared/config`. The current link is `https://amzn.eu/d/01feguzW`.
+- **Amazon link and navigation:** edit `src/shared/constants`. The current link is `https://amzn.eu/d/01feguzW`.
 - **Products and texts:** edit `src/entities/product/model/data.ts`.
 - **Photos and logo:** files are bundled in `public/images`; no Downloads folder or remote image service is required.
-- **Brand colours and layout:** colour tokens are in `src/views/home/ui/HomePage.module.css`; each widget has its own CSS module.
+- **Brand colours and layout:** the palette is in `src/styles/abstract/_palette.scss` and is mapped to CSS variables in `src/styles/base/_themes.scss`; each component has its own SCSS module.
 - **Domain and metadata:** update `metadataBase` in `app/layout.tsx` when moving to another domain.
 
 ## Place in a repository

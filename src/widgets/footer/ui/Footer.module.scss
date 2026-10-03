@@ -1,3 +1,5 @@
+@use '../../../styles/base/typography' as typo;
+
 .inner {
   display: flex;
   flex-wrap: wrap;
@@ -5,24 +7,19 @@
   justify-content: space-between;
   gap: 16px 32px;
   padding: 10px 0 18px;
-  border-top: 1px solid var(--sgs-border);
+  border-top: 1px solid var(--color-border);
 }
+
 .links {
+  @include typo.text-regular-15;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 12px 32px;
-  font-size: 0.95rem;
-  color: var(--sgs-navy);
+  line-height: inherit;
+  color: var(--color-heading);
 }
-.links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.links a:hover {
-  color: var(--sgs-gold-hover);
-}
+
 .copyright {
-  color: var(--sgs-muted);
+  color: var(--color-text-muted);
 }

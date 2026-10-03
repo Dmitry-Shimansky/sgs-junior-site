@@ -1,0 +1,42 @@
+@use '../../../styles/abstract' as abstract;
+
+// The source logo is white on black: invert it and crop to the mark + lettering.
+.logo {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    max-width: none;
+    height: auto;
+    filter: invert(1);
+  }
+
+  &:focus-visible {
+    @include abstract.focus-ring(var(--color-accent), 4px);
+  }
+}
+
+.md {
+  width: 78px;
+  height: 46px;
+
+  img {
+    width: 160px;
+    top: -24px;
+    left: -40px;
+  }
+}
+
+.lg {
+  width: 116px;
+  height: 64px;
+
+  img {
+    width: 237px;
+    top: -34px;
+    left: -60px;
+  }
+}

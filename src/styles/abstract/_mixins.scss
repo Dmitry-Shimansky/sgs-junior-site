@@ -1,0 +1,32 @@
+// Reusable patterns for CSS modules: @include abstract.media-down(sm) { ... }
+@use 'sass:map';
+@use 'variables' as *;
+
+@mixin media-down($breakpoint) {
+  @media (max-width: map.get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin focus-ring($color: var(--color-focus), $offset: 3px) {
+  outline: 3px solid $color;
+  outline-offset: $offset;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,20 +1,21 @@
+import { ANCHOR, toAnchor } from '@/src/shared/constants';
 import { Container } from '@/src/shared/ui';
 import { Footer } from '@/src/widgets/footer';
 import { Header } from '@/src/widgets/header';
 import { Hero } from '@/src/widgets/hero';
 import { ProductAbout } from '@/src/widgets/product-about';
 import { ProductSets } from '@/src/widgets/product-sets';
-import styles from './HomePage.module.css';
+import styles from './HomePage.module.scss';
 
-export function HomePage() {
+export const HomePage = () => {
   return (
     <div className={styles.page}>
-      <a className="skip-link" href="#inhalt">
+      <a className="skip-link" href={toAnchor(ANCHOR.CONTENT)}>
         Zum Inhalt springen
       </a>
       <div className={styles.shell}>
         <Header />
-        <main id="inhalt">
+        <main id={ANCHOR.CONTENT}>
           <Hero />
           <Container className={styles.content}>
             <ProductSets />
@@ -25,4 +26,4 @@ export function HomePage() {
       </div>
     </div>
   );
-}
+};

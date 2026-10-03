@@ -1,0 +1,13 @@
+// palette('gold', 500) — picks a shade from the colour palette.
+@use 'sass:map';
+@use 'sass:meta';
+@use 'palette' as *;
+
+@function palette($name, $shade: null) {
+  $value: map.get($colors, $name);
+
+  @if meta.type-of($value) == 'map' and $shade != null {
+    @return map.get($value, $shade);
+  }
+  @return $value;
+}

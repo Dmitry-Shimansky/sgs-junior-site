@@ -1,0 +1,12 @@
+@use '../../../styles/abstract' as abstract;
+
+.container {
+  width: 100%;
+  padding-left: abstract.$container-padding;
+  padding-right: abstract.$container-padding;
+
+  @include abstract.media-down(sm) {
+    padding-left: abstract.$container-padding-mobile;
+    padding-right: abstract.$container-padding-mobile;
+  }
+}

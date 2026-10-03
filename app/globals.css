@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
+
+/* Tokens for the shadcn starter in components/ui. Site styles live in src/styles. */
 :root{--background:#fff;--foreground:#081123;--primary:#0060ef;--primary-foreground:#fff;--secondary:#e7f5ff;--muted:#f4f6f8;--muted-foreground:#556074;--card:#fff;--border:#e5e9ee;--accent:#ffe332;--ring:#0060ef;color-scheme:light}
 .dark{--background:#fff;--foreground:#081123;--primary:#0060ef;--primary-foreground:#fff;--secondary:#e7f5ff;--muted:#f4f6f8;--muted-foreground:#556074;--card:#fff;--border:#e5e9ee;--accent:#ffe332;--ring:#0060ef}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:2rem}body{margin:0;background:var(--background);color:var(--foreground);font-family:'Trebuchet MS',Arial,sans-serif;font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid #b87500;outline-offset:6px}img{display:block;max-width:100%}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif;font-weight:800;line-height:1.13}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip-link{position:absolute;top:-100px;left:16px;z-index:10;padding:12px 20px;background:#fff}.skip-link:focus{top:10px}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}

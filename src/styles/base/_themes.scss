@@ -1,0 +1,22 @@
+@use '../abstract';
+
+:root {
+  --color-bg: #{abstract.palette('light', 100)};
+  --color-page-bg: linear-gradient(
+    160deg,
+    #{abstract.palette('light', 300)} 0%,
+    #{abstract.palette('light', 700)} 100%
+  );
+  --color-surface: #{abstract.palette('light', 500)};
+  --color-border: #{abstract.palette('light', 900)};
+
+  --color-text: #{abstract.palette('dark', 500)};
+  --color-text-muted: #{abstract.palette('dark', 300)};
+  --color-heading: #{abstract.palette('navy', 500)};
+  --color-on-accent: #{abstract.palette('light', 100)};
+
+  --color-accent: #{abstract.palette('gold', 500)};
+  --color-accent-hover: #{abstract.palette('gold', 700)};
+  --color-focus: #{abstract.palette('gold', 900)};
+  --color-success: #{abstract.palette('success', 500)};
+}

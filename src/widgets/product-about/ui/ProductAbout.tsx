@@ -1,21 +1,20 @@
 import { PRODUCT_FEATURES, PRODUCT_INTRO } from '@/src/entities/product';
-import styles from './ProductAbout.module.css';
+import { ANCHOR } from '@/src/shared/constants';
+import { Badge, Section } from '@/src/shared/ui';
+import styles from './ProductAbout.module.scss';
 
-export function ProductAbout() {
+export const ProductAbout = () => {
   return (
-    <section id="ueber" className={styles.section} aria-labelledby="about-title">
-      <h2 id="about-title" className={styles.title}>
-        Über das Produkt
-      </h2>
-      <p className={styles.intro}>{PRODUCT_INTRO}</p>
+    <Section id={ANCHOR.ABOUT} title="Über das Produkt">
+      <p className={styles.text}>{PRODUCT_INTRO}</p>
       <ul className={styles.list}>
         {PRODUCT_FEATURES.map((feature) => (
           <li key={feature.text} className={styles.item}>
-            <p>{feature.text}</p>
-            {feature.badge && <span className={styles.badge}>{feature.badge}</span>}
+            <p className={styles.text}>{feature.text}</p>
+            {feature.badge && <Badge>{feature.badge}</Badge>}
           </li>
         ))}
       </ul>
-    </section>
+    </Section>
   );
-}
+};

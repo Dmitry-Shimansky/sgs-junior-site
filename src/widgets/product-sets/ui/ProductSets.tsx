@@ -1,18 +1,23 @@
 import { PRODUCT_SETS, ProductSetCard } from '@/src/entities/product';
 import { BuyOnAmazonButton } from '@/src/features/buy-on-amazon';
-import styles from './ProductSets.module.css';
+import { ANCHOR } from '@/src/shared/constants';
+import { Section } from '@/src/shared/ui';
+import styles from './ProductSets.module.scss';
 
-export function ProductSets() {
+export const ProductSets = () => {
   return (
-    <section id="produkte" className={styles.section} aria-labelledby="sets-title">
-      <h2 id="sets-title" className={styles.title}>
-        Unsere Sets
-      </h2>
+    <Section id={ANCHOR.PRODUCTS} title="Unsere Sets">
       <div className={styles.grid}>
         {PRODUCT_SETS.map((product) => (
-          <ProductSetCard key={product.id} product={product} action={<BuyOnAmazonButton href={product.amazonUrl} withIcon={false} />} />
+          <ProductSetCard
+            key={product.id}
+            product={product}
+            action={
+              <BuyOnAmazonButton href={product.amazonUrl} withIcon={false} />
+            }
+          />
         ))}
       </div>
-    </section>
+    </Section>
   );
-}
+};

@@ -1,28 +1,34 @@
 import { ArrowUp, ShoppingCart } from 'lucide-react';
-import { AMAZON_URL } from '@/src/shared/config';
-import { Container, Logo } from '@/src/shared/ui';
-import styles from './Footer.module.css';
+import { AMAZON_URL, ANCHOR, toAnchor } from '@/src/shared/constants';
+import { Container, Logo, TextLink } from '@/src/shared/ui';
+import styles from './Footer.module.scss';
 
-export function Footer() {
+export const Footer = () => {
   return (
-    <footer id="kontakt" className={styles.footer}>
+    <footer id={ANCHOR.CONTACT}>
       <Container>
         <div className={styles.inner}>
           <Logo size="lg" />
           <nav aria-label="Fußzeile" className={styles.links}>
-            <a href={AMAZON_URL} target="_blank" rel="noopener noreferrer">
-              <ShoppingCart size={18} aria-hidden="true" />
+            <TextLink
+              href={AMAZON_URL}
+              external
+              icon={<ShoppingCart size={18} aria-hidden="true" />}
+            >
               Bestellung & Kundenservice über Amazon
-              <span className="sr-only"> (öffnet in einem neuen Tab)</span>
-            </a>
-            <a href="#start">
-              <ArrowUp size={18} aria-hidden="true" />
+            </TextLink>
+            <TextLink
+              href={toAnchor(ANCHOR.START)}
+              icon={<ArrowUp size={18} aria-hidden="true" />}
+            >
               Nach oben
-            </a>
-            <span className={styles.copyright}>© {new Date().getFullYear()} SGS Junior</span>
+            </TextLink>
+            <span className={styles.copyright}>
+              © {new Date().getFullYear()} SGS Junior
+            </span>
           </nav>
         </div>
       </Container>
     </footer>
   );
-}
+};

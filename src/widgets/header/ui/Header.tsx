@@ -1,20 +1,20 @@
-import { NAV_ITEMS } from '@/src/shared/config';
-import { Container, Logo } from '@/src/shared/ui';
-import styles from './Header.module.css';
+import { ANCHOR, NAV_ITEMS } from '@/src/shared/constants';
+import { Container, Logo, TextLink } from '@/src/shared/ui';
+import styles from './Header.module.scss';
 
-export function Header() {
+export const Header = () => {
   return (
-    <header id="start" className={styles.header}>
+    <header id={ANCHOR.START} className={styles.header}>
       <Container className={styles.inner}>
         <Logo />
         <nav aria-label="Hauptnavigation" className={styles.nav}>
           {NAV_ITEMS.map((item) => (
-            <a key={item.href} href={item.href}>
+            <TextLink key={item.href} href={item.href}>
               {item.label}
-            </a>
+            </TextLink>
           ))}
         </nav>
       </Container>
     </header>
   );
-}
+};

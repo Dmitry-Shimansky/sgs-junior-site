@@ -1,0 +1,21 @@
+@use '../../../styles/abstract' as abstract;
+@use '../../../styles/base/typography' as typo;
+
+.text {
+  @include typo.text-regular-15;
+  color: var(--color-text);
+}
+
+.list {
+  @include abstract.reset-list;
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
