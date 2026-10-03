@@ -1,7 +1,7 @@
-import type { CSSProperties } from 'react';
-import { BuyOnAmazonButton } from '@/src/features/buy-on-amazon';
-import { Container } from '@/src/shared/ui';
-import styles from './Hero.module.scss';
+import type { CSSProperties } from 'react'
+import { BuyOnAmazonButton } from '@/src/features/buy-on-amazon'
+import { Container } from '@/src/shared/ui'
+import styles from './Hero.module.scss'
 
 // Close-ups cut from the existing product shots (image-space px of a 1537×1023 source).
 const TILES = [
@@ -29,7 +29,7 @@ const TILES = [
     cx: 1358,
     cy: 665,
   },
-];
+]
 
 export const Hero = () => {
   return (
@@ -43,7 +43,7 @@ export const Hero = () => {
         </div>
         <div className={styles.collage}>
           <div className={styles.stage}>
-            {TILES.map((tile) => (
+            {TILES.map(tile => (
               <div
                 key={tile.className}
                 className={`${styles.tile} ${tile.className}`}
@@ -69,5 +69,5 @@ export const Hero = () => {
         </div>
       </Container>
     </section>
-  );
-};
+  )
+}

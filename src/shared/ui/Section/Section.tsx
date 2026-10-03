@@ -1,17 +1,17 @@
-import clsx from 'clsx';
-import type { HTMLAttributes, ReactNode } from 'react';
-import styles from './Section.module.scss';
+import clsx from 'clsx'
+import type { HTMLAttributes, ReactNode } from 'react'
+import styles from './Section.module.scss'
 
 type SectionProps = Omit<HTMLAttributes<HTMLElement>, 'title'> & {
-  id: string;
-  title: ReactNode;
-  children: ReactNode;
-};
+  id: string
+  title: ReactNode
+  children: ReactNode
+}
 
 /** Page section with an `h2` heading wired up via `aria-labelledby`. */
 export const Section = (props: SectionProps) => {
-  const { id, title, children, className, ...rest } = props;
-  const titleId = `${id}-title`;
+  const { id, title, children, className, ...rest } = props
+  const titleId = `${id}-title`
 
   return (
     <section
@@ -25,5 +25,5 @@ export const Section = (props: SectionProps) => {
       </h2>
       {children}
     </section>
-  );
-};
+  )
+}

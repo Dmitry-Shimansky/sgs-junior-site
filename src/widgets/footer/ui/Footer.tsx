@@ -1,7 +1,7 @@
-import { ArrowUp, ShoppingCart } from 'lucide-react';
-import { AMAZON_URL, ANCHOR, toAnchor } from '@/src/shared/constants';
-import { Container, Logo, TextLink } from '@/src/shared/ui';
-import styles from './Footer.module.scss';
+import { ArrowUp, ShoppingCart } from 'lucide-react'
+import { AMAZON_URL, ANCHOR, toAnchor } from '@/src/shared/constants'
+import { Container, Logo, TextLink } from '@/src/shared/ui'
+import styles from './Footer.module.scss'
 
 export const Footer = () => {
   return (
@@ -17,18 +17,13 @@ export const Footer = () => {
             >
               Bestellung & Kundenservice über Amazon
             </TextLink>
-            <TextLink
-              href={toAnchor(ANCHOR.START)}
-              icon={<ArrowUp size={18} aria-hidden="true" />}
-            >
+            <TextLink href={toAnchor(ANCHOR.START)} icon={<ArrowUp size={18} aria-hidden="true" />}>
               Nach oben
             </TextLink>
-            <span className={styles.copyright}>
-              © {new Date().getFullYear()} SGS Junior
-            </span>
+            <span className={styles.copyright}>© {new Date().getFullYear()} SGS Junior</span>
           </nav>
         </div>
       </Container>
     </footer>
-  );
-};
+  )
+}

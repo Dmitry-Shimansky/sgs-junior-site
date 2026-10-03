@@ -1,7 +1,7 @@
-export { Badge } from './Badge';
-export { Button } from './Button';
-export type { ButtonProps } from './Button';
-export { Container } from './Container';
-export { Logo } from './Logo';
-export { Section } from './Section';
-export { TextLink } from './TextLink';
+export { Badge } from './Badge'
+export { Button } from './Button'
+export type { ButtonProps } from './Button'
+export { Container } from './Container'
+export { Logo } from './Logo'
+export { Section } from './Section'
+export { TextLink } from './TextLink'

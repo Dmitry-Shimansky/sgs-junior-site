@@ -5,8 +5,8 @@ export const ANCHOR = {
   PRODUCTS: 'produkte',
   ABOUT: 'ueber',
   CONTACT: 'kontakt',
-} as const;
+} as const
 
-export type Anchor = (typeof ANCHOR)[keyof typeof ANCHOR];
+export type Anchor = (typeof ANCHOR)[keyof typeof ANCHOR]
 
-export const toAnchor = (id: Anchor) => `#${id}`;
+export const toAnchor = (id: Anchor) => `#${id}`

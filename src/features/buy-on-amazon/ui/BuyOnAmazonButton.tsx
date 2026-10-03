@@ -1,14 +1,14 @@
-import { ShoppingCart } from 'lucide-react';
-import { AMAZON_URL } from '@/src/shared/constants';
-import { Button } from '@/src/shared/ui';
+import { ShoppingCart } from 'lucide-react'
+import { AMAZON_URL } from '@/src/shared/constants'
+import { Button } from '@/src/shared/ui'
 
 type BuyOnAmazonButtonProps = {
-  href?: string;
-  size?: 'md' | 'lg';
-  className?: string;
-  label?: string;
-  withIcon?: boolean;
-};
+  href?: string
+  size?: 'md' | 'lg'
+  className?: string
+  label?: string
+  withIcon?: boolean
+}
 
 export const BuyOnAmazonButton = (props: BuyOnAmazonButtonProps) => {
   const {
@@ -17,7 +17,7 @@ export const BuyOnAmazonButton = (props: BuyOnAmazonButtonProps) => {
     className,
     label = 'Auf Amazon kaufen',
     withIcon = true,
-  } = props;
+  } = props
 
   return (
     <Button
@@ -25,13 +25,9 @@ export const BuyOnAmazonButton = (props: BuyOnAmazonButtonProps) => {
       external
       size={size}
       className={className}
-      icon={
-        withIcon && (
-          <ShoppingCart size={20} strokeWidth={2} aria-hidden="true" />
-        )
-      }
+      icon={withIcon && <ShoppingCart size={20} strokeWidth={2} aria-hidden="true" />}
     >
       {label}
     </Button>
-  );
-};
+  )
+}

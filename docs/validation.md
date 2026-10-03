@@ -2,15 +2,15 @@
 
 Checked on 14 September 2026 using Node.js 24.19.0 and pnpm 11.19.0.
 
-| Check | Result |
-| --- | --- |
-| Frozen lockfile consistency (`pnpm install --lockfile-only --offline --ignore-scripts --frozen-lockfile`) | Passed; no dependency version changes |
-| TypeScript (`pnpm typecheck`) | Passed |
-| Production export (`pnpm build`) | Passed; `/` is a static route |
-| Production launch (`pnpm start --port 4181 --hostname 127.0.0.1`) | Passed |
-| Home route over HTTP | Passed; expected headline, German language and Amazon links |
-| Referenced local assets | All 11 image, style and script URLs loaded successfully |
-| Full-project lint (`pnpm lint`) | 23 findings; see below |
+| Check                                                                                                     | Result                                                      |
+| --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Frozen lockfile consistency (`pnpm install --lockfile-only --offline --ignore-scripts --frozen-lockfile`) | Passed; no dependency version changes                       |
+| TypeScript (`pnpm typecheck`)                                                                             | Passed                                                      |
+| Production export (`pnpm build`)                                                                          | Passed; `/` is a static route                               |
+| Production launch (`pnpm start --port 4181 --hostname 127.0.0.1`)                                         | Passed                                                      |
+| Home route over HTTP                                                                                      | Passed; expected headline, German language and Amazon links |
+| Referenced local assets                                                                                   | All 11 image, style and script URLs loaded successfully     |
+| Full-project lint (`pnpm lint`)                                                                           | 23 findings; see below                                      |
 
 The build’s prerender step starts a temporary localhost server. It completed after local socket access was allowed in the development sandbox. This is a local build step and does not publish the website.
 

@@ -2,6 +2,6 @@
 export const EXTERNAL_LINK_PROPS = {
   target: '_blank',
   rel: 'noopener noreferrer',
-} as const;
+} as const
 
-export const EXTERNAL_LINK_HINT = ' (öffnet in einem neuen Tab)';
+export const EXTERNAL_LINK_HINT = ' (öffnet in einem neuen Tab)'

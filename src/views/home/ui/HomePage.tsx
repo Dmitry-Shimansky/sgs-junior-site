@@ -1,11 +1,11 @@
-import { ANCHOR, toAnchor } from '@/src/shared/constants';
-import { Container } from '@/src/shared/ui';
-import { Footer } from '@/src/widgets/footer';
-import { Header } from '@/src/widgets/header';
-import { Hero } from '@/src/widgets/hero';
-import { ProductAbout } from '@/src/widgets/product-about';
-import { ProductSets } from '@/src/widgets/product-sets';
-import styles from './HomePage.module.scss';
+import { ANCHOR, toAnchor } from '@/src/shared/constants'
+import { Container } from '@/src/shared/ui'
+import { Footer } from '@/src/widgets/footer'
+import { Header } from '@/src/widgets/header'
+import { Hero } from '@/src/widgets/hero'
+import { ProductAbout } from '@/src/widgets/product-about'
+import { ProductSets } from '@/src/widgets/product-sets'
+import styles from './HomePage.module.scss'
 
 export const HomePage = () => {
   return (
@@ -25,5 +25,5 @@ export const HomePage = () => {
         <Footer />
       </div>
     </div>
-  );
-};
+  )
+}

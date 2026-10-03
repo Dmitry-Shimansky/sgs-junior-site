@@ -4,20 +4,20 @@ Prepared on 14 September 2026. The site has a single home page at `/`. The site 
 
 ## Design overview
 
-| Route | Visual direction | Hero headline |
-| --- | --- | --- |
-| `/` | Light page with navy text and gold buttons, product set cards | SGS Junior – Komfort & Spaß für aktive Jungs! |
+| Route | Visual direction                                              | Hero headline                                 |
+| ----- | ------------------------------------------------------------- | --------------------------------------------- |
+| `/`   | Light page with navy text and gold buttons, product set cards | SGS Junior – Komfort & Spaß für aktive Jungs! |
 
 The hero collage uses CSS crops of the original product images. The full product packs are also displayed. The design does not require generated model photography.
 
 ## Included assets
 
-| Repository path | Original supplied filename | Content |
-| --- | --- | --- |
-| `public/images/sgs-logo.jpg` | `37dffa16-5624-4263-83e9-cdbca875699e.JPG` | SGS logo |
-| `public/images/klassischer-mix.png` | `exec-bfafed86-6897-4f6b-a51e-06429972b3cd.PNG` | Classic mix: 4 black, 3 blue, 3 grey |
-| `public/images/bunter-mix.jpg` | `PHOTO-2026-09-07-14-59-18.jpg` | Colourful mix: 2 each in burgundy, petrol, blue, grey and light blue |
-| `public/images/schwarz.png` | `exec-8db2d3a4-cf42-44fb-96e6-5ef73acb975c.PNG` | Ten black boxers |
+| Repository path                     | Original supplied filename                      | Content                                                              |
+| ----------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------- |
+| `public/images/sgs-logo.jpg`        | `37dffa16-5624-4263-83e9-cdbca875699e.JPG`      | SGS logo                                                             |
+| `public/images/klassischer-mix.png` | `exec-bfafed86-6897-4f6b-a51e-06429972b3cd.PNG` | Classic mix: 4 black, 3 blue, 3 grey                                 |
+| `public/images/bunter-mix.jpg`      | `PHOTO-2026-09-07-14-59-18.jpg`                 | Colourful mix: 2 each in burgundy, petrol, blue, grey and light blue |
+| `public/images/schwarz.png`         | `exec-8db2d3a4-cf42-44fb-96e6-5ef73acb975c.PNG` | Ten black boxers                                                     |
 
 The black-pack image contains a contradictory source annotation listing several colours. Website copy describes the visible ten black garments; the original image has been retained.
 

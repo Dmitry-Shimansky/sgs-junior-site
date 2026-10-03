@@ -38,20 +38,12 @@
 }
 
 .primary {
-  @include button-states(
-    var(--color-accent),
-    var(--color-accent-hover),
-    var(--color-on-accent)
-  );
+  @include button-states(var(--color-accent), var(--color-accent-hover), var(--color-on-accent));
   box-shadow: 0 6px 16px rgb(214 165 49 / 0.28);
 }
 
 .outline {
-  @include button-states(
-    transparent,
-    var(--color-accent),
-    var(--color-accent-hover)
-  );
+  @include button-states(transparent, var(--color-accent), var(--color-accent-hover));
   // Inset shadow instead of a border keeps both variants the same size.
   box-shadow: inset 0 0 0 1px currentColor;
 

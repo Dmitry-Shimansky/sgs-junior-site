@@ -2,9 +2,9 @@
 
 A German-language website for SGS Junior boys’ underwear, with a responsive home page and links to the existing Amazon product listing.
 
-| Design | Route | Main files |
-| --- | --- | --- |
-| Light, navy and gold — “SGS Junior – Komfort & Spaß für aktive Jungs!” | `/` | `app/page.tsx` → `src/views/home` (FSD, see below) |
+| Design                                                                 | Route | Main files                                         |
+| ---------------------------------------------------------------------- | ----- | -------------------------------------------------- |
+| Light, navy and gold — “SGS Junior – Komfort & Spaß für aktive Jungs!” | `/`   | `app/page.tsx` → `src/views/home` (FSD, see below) |
 
 The site uses React 19, TypeScript, and Next.js (App Router). It builds a static site (`output: 'export'`). Orders, payment, size selection, and customer service are handled on Amazon through the supplied product link; this project does not use an Amazon API or provide its own checkout.
 

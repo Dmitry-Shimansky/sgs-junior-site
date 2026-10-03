@@ -1,1 +1,1 @@
-export { BuyOnAmazonButton } from './ui/BuyOnAmazonButton';
+export { BuyOnAmazonButton } from './ui/BuyOnAmazonButton'

@@ -2,5 +2,30 @@
 @import 'tailwindcss';
 
 /* Tokens for the shadcn starter in components/ui. Site styles live in src/styles. */
-:root{--background:#fff;--foreground:#081123;--primary:#0060ef;--primary-foreground:#fff;--secondary:#e7f5ff;--muted:#f4f6f8;--muted-foreground:#556074;--card:#fff;--border:#e5e9ee;--accent:#ffe332;--ring:#0060ef;color-scheme:light}
-.dark{--background:#fff;--foreground:#081123;--primary:#0060ef;--primary-foreground:#fff;--secondary:#e7f5ff;--muted:#f4f6f8;--muted-foreground:#556074;--card:#fff;--border:#e5e9ee;--accent:#ffe332;--ring:#0060ef}
+:root {
+  --background: #fff;
+  --foreground: #081123;
+  --primary: #0060ef;
+  --primary-foreground: #fff;
+  --secondary: #e7f5ff;
+  --muted: #f4f6f8;
+  --muted-foreground: #556074;
+  --card: #fff;
+  --border: #e5e9ee;
+  --accent: #ffe332;
+  --ring: #0060ef;
+  color-scheme: light;
+}
+.dark {
+  --background: #fff;
+  --foreground: #081123;
+  --primary: #0060ef;
+  --primary-foreground: #fff;
+  --secondary: #e7f5ff;
+  --muted: #f4f6f8;
+  --muted-foreground: #556074;
+  --card: #fff;
+  --border: #e5e9ee;
+  --accent: #ffe332;
+  --ring: #0060ef;
+}

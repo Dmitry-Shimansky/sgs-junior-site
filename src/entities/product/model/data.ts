@@ -1,5 +1,5 @@
-import { AMAZON_URL } from '@/src/shared/constants';
-import type { ProductFeature, ProductSet } from './types';
+import { AMAZON_URL } from '@/src/shared/constants'
+import type { ProductFeature, ProductSet } from './types'
 
 // All sets currently point to the same Amazon listing; swap per-variant URLs here when available.
 export const PRODUCT_SETS: ProductSet[] = [
@@ -29,10 +29,10 @@ export const PRODUCT_SETS: ProductSet[] = [
     composition: '10 × Schwarz',
     amazonUrl: AMAZON_URL,
   },
-];
+]
 
 export const PRODUCT_INTRO =
-  'Bequeme Boxershorts für Jungen – gemacht für Schule, Sport und alles, was ein aktiver Tag bringt.';
+  'Bequeme Boxershorts für Jungen – gemacht für Schule, Sport und alles, was ein aktiver Tag bringt.'
 
 export const PRODUCT_FEATURES: ProductFeature[] = [
   {
@@ -50,4 +50,4 @@ export const PRODUCT_FEATURES: ProductFeature[] = [
     text: 'Praktisches 10er-Pack für den täglichen Wechsel. Für die Maschinenwäsche geeignet.',
     badge: '10er-Pack',
   },
-];
+]
