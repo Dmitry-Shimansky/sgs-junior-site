@@ -78,7 +78,7 @@ pnpm build
 pnpm start
 ```
 
-TypeScript checks and the production build pass. The existing full-project lint command reports findings in the included starter components and flags native `<img>` elements used by the static pages. These are recorded in `docs/validation.md`; the lint command does not currently exit successfully.
+TypeScript checks and the production build pass. The lint command passes with warnings (unused props in `Button.tsx` and native `<img>` elements).
 
 `pnpm start` serves the static export in `out/` with [`serve`](https://github.com/vercel/serve) at `http://localhost:3000` by default (`next start` does not work with static export). Stop it with Ctrl+C. To use a different port:
 
@@ -94,7 +94,6 @@ Static hosting files are generated in **`out`**, including `index.html`, `404.ht
 app/
   layout.tsx                 German language, shared metadata and favicon
   page.tsx                   Route entry; renders src/views/home
-  globals.css                Font, Tailwind and starter UI tokens (site styles: src/styles)
 src/                         Home page in FSD layers (see above)
 public/
   favicon.svg
@@ -102,11 +101,8 @@ public/
 docs/
   german-website-copy.md      Product source notes and original German copy
   handover.md                Design, asset and maintenance notes
-components/ui/               Included UI components from the project starter
-hooks/, lib/                 Starter helpers
 .openai/hosting.json          Existing Sites hosting project association
 next.config.ts               Static export configuration
-postcss.config.mjs           Tailwind CSS PostCSS setup
 package.json                 Commands and package versions
 pnpm-lock.yaml               Dependency lockfile
 ```

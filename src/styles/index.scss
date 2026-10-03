@@ -1,3 +1,5 @@
 // Global entry point: imported once from app/layout.tsx.
 // CSS modules must @use './abstract' and './base/typography' only — they emit no CSS.
 @use './base';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
