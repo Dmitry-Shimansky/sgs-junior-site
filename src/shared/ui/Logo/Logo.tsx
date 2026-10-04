@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { ANCHOR, toAnchor } from '@/src/shared/constants'
+import { withBasePath } from '@/src/shared/lib'
 import styles from './Logo.module.scss'
 
 type LogoProps = {
@@ -16,7 +17,7 @@ export const Logo = (props: LogoProps) => {
       className={clsx(styles.logo, styles[size])}
       aria-label="SGS Junior – zur Startseite"
     >
-      <img src="/images/sgs-logo.jpg" alt="SGS" width="2048" height="1280" />
+      <img src={withBasePath('/images/sgs-logo.jpg')} alt="SGS" width="2048" height="1280" />
     </a>
   )
 }

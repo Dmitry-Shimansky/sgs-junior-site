@@ -1,4 +1,5 @@
 import React from 'react'
+import { withBasePath } from '@/src/shared/lib'
 
 type IconProps = {
     iconId: string | null
@@ -10,7 +11,7 @@ type IconProps = {
 }
 
 export const Icon = (props: IconProps) => {
-    const sprite = '/icons-sprite.svg'
+    const sprite = withBasePath('/icons-sprite.svg')
     const { iconId, size, className, fill, stroke, viewBox } = props
 
     return (

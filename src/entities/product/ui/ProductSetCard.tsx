@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { withBasePath } from '@/src/shared/lib'
 import type { ProductSet } from '../model/types'
 import styles from './ProductSetCard.module.scss'
 
@@ -17,7 +18,13 @@ export const ProductSetCard = (props: ProductSetCardProps) => {
         {product.subtitle && <span className={styles.subtitle}>{product.subtitle}</span>}
       </h3>
       <div className={styles.photo}>
-        <img src={product.image} alt={product.alt} width="1537" height="1023" loading="lazy" />
+        <img
+          src={withBasePath(product.image)}
+          alt={product.alt}
+          width="1537"
+          height="1023"
+          loading="lazy"
+        />
       </div>
       <p className={styles.composition}>{product.composition}</p>
       {action && <div className={styles.action}>{action}</div>}

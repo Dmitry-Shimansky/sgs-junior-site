@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { withBasePath } from '@/src/shared/lib'
 import '@/src/styles/index.scss'
 
 export const metadata: Metadata = {
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
   title: 'SGS Junior – Bequeme Jungen-Boxershorts im 10er-Pack',
   description:
     'SGS Junior: Jungen-Boxershorts aus 95 % Baumwolle und 5 % Elasthan. Entdecke unsere 10er-Packs und EU-Kindergrößen 98–176 auf Amazon.',
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: withBasePath('/favicon.svg') },
   openGraph: {
     title: 'SGS Junior – Für kleine Helden. Für jeden Tag.',
     description: 'Weiche Jungen-Unterwäsche im 10er-Pack. Entdecke SGS auf Amazon.',

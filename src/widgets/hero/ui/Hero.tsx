@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import { AMAZON_URL } from '@/src/shared/constants'
+import { withBasePath } from '@/src/shared/lib'
 import { Button, Container } from '@/src/shared/ui'
 import styles from './Hero.module.scss'
 
@@ -52,7 +53,7 @@ export const Hero = () => {
                 style={{ '--cx': tile.cx, '--cy': tile.cy } as CSSProperties}
                 aria-hidden="true"
               >
-                <img src={tile.src} alt="" width="1537" height="1023" />
+                <img src={withBasePath(tile.src)} alt="" width="1537" height="1023" />
               </div>
             ))}
             <div
@@ -60,7 +61,7 @@ export const Hero = () => {
               style={{ '--cx': 768, '--cy': 500 } as CSSProperties}
             >
               <img
-                src="/images/bunter-mix.jpg"
+                src={withBasePath('/images/bunter-mix.jpg')}
                 alt="SGS Junior: zehn bunte Boxershorts für Jungen mit schwarzem Markenbund"
                 width="1537"
                 height="1023"
