@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
-import { BuyOnAmazonButton } from '@/src/features/buy-on-amazon'
-import { Container } from '@/src/shared/ui'
+import { AMAZON_URL } from '@/src/shared/constants'
+import { Button, Container } from '@/src/shared/ui'
 import styles from './Hero.module.scss'
 
 // Close-ups cut from the existing product shots (image-space px of a 1537×1023 source).
@@ -39,7 +39,9 @@ export const Hero = () => {
           <h1 id="hero-title" className={styles.title}>
             SGS Junior – Komfort & Spaß für aktive Jungs!
           </h1>
-          <BuyOnAmazonButton size="lg" label="Jetzt auf Amazon kaufen" />
+          <Button href={AMAZON_URL} external size="lg" iconId="amazon">
+            Jetzt auf Amazon kaufen
+          </Button>
         </div>
         <div className={styles.collage}>
           <div className={styles.stage}>

@@ -1,7 +1,6 @@
 import { PRODUCT_SETS, ProductSetCard } from '@/src/entities/product'
-import { BuyOnAmazonButton } from '@/src/features/buy-on-amazon'
 import { ANCHOR } from '@/src/shared/constants'
-import { Section } from '@/src/shared/ui'
+import { Button, Section } from '@/src/shared/ui'
 import styles from './ProductSets.module.scss'
 
 export const ProductSets = () => {
@@ -12,7 +11,11 @@ export const ProductSets = () => {
           <ProductSetCard
             key={product.id}
             product={product}
-            action={<BuyOnAmazonButton href={product.amazonUrl} withIcon={false} />}
+            action={
+              <Button href={product.amazonUrl} external>
+                Auf Amazon kaufen
+              </Button>
+            }
           />
         ))}
       </div>
