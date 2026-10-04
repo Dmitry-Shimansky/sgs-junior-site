@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react'
 import { EXTERNAL_LINK_HINT, EXTERNAL_LINK_PROPS } from '@/src/shared/lib'
+import { Icon } from '@/src/shared/ui/Icon/Icon'
 import styles from './Button.module.scss'
 
 type ButtonVariant = 'primary' | 'outline'
@@ -10,7 +11,9 @@ type BaseProps = {
   children: ReactNode
   variant?: ButtonVariant
   size?: ButtonSize
-  icon?: ReactNode
+  /** Sprite symbol id rendered via `Icon`. */
+  iconId?: string
+  iconSize?: number
   iconPosition?: 'start' | 'end'
   fullWidth?: boolean
   className?: string
@@ -38,7 +41,8 @@ export const Button = (props: ButtonProps) => {
     children,
     variant = 'primary',
     size = 'md',
-    icon,
+    iconId,
+    iconSize = 20,
     iconPosition = 'end',
     fullWidth = false,
     className,
@@ -52,6 +56,8 @@ export const Button = (props: ButtonProps) => {
     className
   )
 
+  const icon = iconId && <Icon iconId={iconId} size={iconSize} />
+
   const content = (
     <>
       {iconPosition === 'start' && icon}
@@ -64,7 +70,8 @@ export const Button = (props: ButtonProps) => {
     const {
       variant: _variant,
       size: _size,
-      icon: _icon,
+      iconId: _iconId,
+      iconSize: _iconSize,
       iconPosition: _iconPosition,
       fullWidth: _fullWidth,
       className: _className,
@@ -84,7 +91,8 @@ export const Button = (props: ButtonProps) => {
   const {
     variant: _variant,
     size: _size,
-    icon: _icon,
+    iconId: _iconId,
+    iconSize: _iconSize,
     iconPosition: _iconPosition,
     fullWidth: _fullWidth,
     className: _className,

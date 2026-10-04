@@ -1,4 +1,3 @@
-import { ShoppingCart } from 'lucide-react'
 import { AMAZON_URL } from '@/src/shared/constants'
 import { Button } from '@/src/shared/ui'
 
@@ -25,7 +24,7 @@ export const BuyOnAmazonButton = (props: BuyOnAmazonButtonProps) => {
       external
       size={size}
       className={className}
-      icon={withIcon && <ShoppingCart size={20} strokeWidth={2} aria-hidden="true" />}
+      iconId={withIcon ? 'amazon' : undefined}
     >
       {label}
     </Button>
