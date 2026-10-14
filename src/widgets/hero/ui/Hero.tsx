@@ -1,36 +1,7 @@
-import type { CSSProperties } from 'react'
 import { AMAZON_URL } from '@/src/shared/constants'
 import { withBasePath } from '@/src/shared/lib'
 import { Button, Container } from '@/src/shared/ui'
 import styles from './Hero.module.scss'
-
-// Close-ups cut from the existing product shots (image-space px of a 1537×1023 source).
-const TILES = [
-  {
-    className: styles.tileTopLeft,
-    src: '/images/bunter-mix.jpg',
-    cx: 175,
-    cy: 330,
-  },
-  {
-    className: styles.tileTopRight,
-    src: '/images/klassischer-mix.png',
-    cx: 768,
-    cy: 325,
-  },
-  {
-    className: styles.tileBottomLeft,
-    src: '/images/bunter-mix.jpg',
-    cx: 478,
-    cy: 672,
-  },
-  {
-    className: styles.tileBottomRight,
-    src: '/images/klassischer-mix.png',
-    cx: 1358,
-    cy: 665,
-  },
-]
 
 export const Hero = () => {
   return (
@@ -44,31 +15,15 @@ export const Hero = () => {
             Jetzt auf Amazon kaufen
           </Button>
         </div>
-        <div className={styles.collage}>
-          <div className={styles.stage}>
-            {TILES.map(tile => (
-              <div
-                key={tile.className}
-                className={`${styles.tile} ${tile.className}`}
-                style={{ '--cx': tile.cx, '--cy': tile.cy } as CSSProperties}
-                aria-hidden="true"
-              >
-                <img src={withBasePath(tile.src)} alt="" width="1537" height="1023" />
-              </div>
-            ))}
-            <div
-              className={`${styles.tile} ${styles.tileCenter}`}
-              style={{ '--cx': 768, '--cy': 500 } as CSSProperties}
-            >
-              <img
-                src={withBasePath('/images/bunter-mix.jpg')}
-                alt="SGS Junior: zehn bunte Boxershorts für Jungen mit schwarzem Markenbund"
-                width="1537"
-                height="1023"
-                fetchPriority="high"
-              />
-            </div>
-          </div>
+        <div className={styles.media}>
+          <img
+            className={styles.image}
+            src={withBasePath('/images/kids-bg-removed.png')}
+            alt="SGS Junior: zehn bunte Boxershorts für Jungen mit schwarzem Markenbund"
+            width="1106"
+            height="532"
+            fetchPriority="high"
+          />
         </div>
       </Container>
     </section>
