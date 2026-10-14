@@ -4,6 +4,7 @@ import { withBasePath } from '@/src/shared/lib'
 import styles from './Logo.module.scss'
 
 type LogoProps = {
+  image: string
   href?: string
   size?: 'md' | 'lg'
 }
@@ -17,7 +18,7 @@ export const Logo = (props: LogoProps) => {
       className={clsx(styles.logo, styles[size])}
       aria-label="SGS Junior – zur Startseite"
     >
-      <img src={withBasePath('/images/sgs-logo.jpg')} alt="SGS" width="2048" height="1280" />
+      <img src={withBasePath(`/images/${props.image}`)} alt="SGS" />
     </a>
   )
 }

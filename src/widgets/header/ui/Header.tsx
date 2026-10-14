@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <header id={ANCHOR.START} className={styles.header}>
       <Container className={styles.inner}>
-        <Logo />
+        <Logo image={'bottom_logo-cropped.png'}/>
         <nav aria-label="Hauptnavigation" className={styles.nav}>
           {NAV_ITEMS.map(item => (
             <TextLink key={item.href} href={item.href}>

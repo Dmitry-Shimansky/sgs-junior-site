@@ -8,7 +8,7 @@ export const Footer = () => {
     <footer id={ANCHOR.CONTACT}>
       <Container>
         <div className={styles.inner}>
-          <Logo size="lg" />
+          <Logo image={'top_logo-cropped.png'} size="lg" />
           <nav aria-label="Fußzeile" className={styles.links}>
             <TextLink href={AMAZON_URL} external icon={<Icon iconId="shopping-cart" size={18} />}>
               Bestellung & Kundenservice über Amazon
