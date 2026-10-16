@@ -23,3 +23,15 @@
 .copyright {
   color: var(--color-text-muted);
 }
+
+// Brand icons render in black until hovered, then show their own colours.
+.social {
+  --icon-mono: #000;
+  --icon-mono-contrast: #fff;
+
+  &:hover,
+  &:focus-visible {
+    --icon-mono: initial;
+    --icon-mono-contrast: initial;
+  }
+}
