@@ -1,4 +1,4 @@
-import { AMAZON_URL } from '@/src/shared/constants'
+import { AMAZON_URL, AMAZON_URLS } from '@/src/shared/constants'
 import type { ProductFeature, ProductSet } from './types'
 
 // All sets currently point to the same Amazon listing; swap per-variant URLs here when available.
@@ -27,7 +27,7 @@ export const PRODUCT_SETS: ProductSet[] = [
     image: '/images/BLACK_SET.png',
     alt: 'Zehn schwarze SGS Jungen-Boxershorts',
     composition: '10 × Schwarz',
-    amazonUrl: AMAZON_URL,
+    amazonUrl: AMAZON_URLS.black_set,
   },
 ]
 

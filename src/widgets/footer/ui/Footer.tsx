@@ -13,8 +13,8 @@ export const Footer = () => {
             <TextLink href={AMAZON_URL} external className={styles.social} icon={<Icon iconId="instagram-colour" size={18} />}>
               Instagram
             </TextLink>
-            <TextLink href={AMAZON_URL} external className={styles.social} icon={<Icon iconId="telegram-colour" size={18} />}>
-              Telegram
+            <TextLink href={AMAZON_URL} external className={styles.social} icon={<Icon iconId="tiktok-colour" size={18} />}>
+              Tik Tok
             </TextLink>
             <TextLink href={toAnchor(ANCHOR.START)} icon={<Icon iconId="up-arrow" size={18} />}>
               Nach oben
