@@ -1,6 +1,7 @@
 import { AMAZON_URL } from '@/src/shared/constants'
 import { withBasePath } from '@/src/shared/lib'
 import { Button, Container } from '@/src/shared/ui'
+import { Advantages } from './Advantages'
 import styles from './Hero.module.scss'
 
 export const Hero = () => {
@@ -26,6 +27,7 @@ export const Hero = () => {
           />
         </div>
       </Container>
+      <Advantages />
     </section>
   )
 }

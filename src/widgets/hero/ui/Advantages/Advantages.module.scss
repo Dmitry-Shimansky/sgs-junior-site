@@ -1,0 +1,108 @@
+@use 'sass:color';
+@use '../../../../styles/abstract' as abstract;
+@use '../../../../styles/base/typography' as typo;
+
+$navy: abstract.palette('navy', 500);
+
+.advantages {
+  position: relative;
+  isolation: isolate;
+  padding: 28px 0 40px;
+
+  @include abstract.media-down(sm) {
+    padding: 24px 0 32px;
+  }
+}
+
+.waves {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.waveBack {
+  fill: color.adjust($navy, $lightness: 55%);
+  opacity: 0.35;
+}
+
+.waveMid {
+  fill: #7fb7bf;
+  opacity: 0.45;
+}
+
+.waveFront {
+  fill: #b9d9dd;
+  opacity: 0.4;
+}
+
+.title {
+  @include typo.h2;
+  margin-bottom: 20px;
+  color: var(--color-heading);
+  text-align: center;
+}
+
+.list {
+  @include abstract.reset-list;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+
+  @include abstract.media-down(lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 32px;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+// Navy disc with a gold ring; the icons are white line-art on black,
+// so `lighten` blending turns the black into the navy background.
+.badge {
+  display: block;
+  width: 120px;
+  height: 120px;
+  padding: 4px;
+  border: 5px solid var(--color-accent);
+  border-radius: 50%;
+  background: $navy;
+  box-shadow: 0 6px 16px rgb(19 37 74 / 25%);
+  isolation: isolate;
+
+  @include abstract.media-down(sm) {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+.icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+}
+
+.itemTitle {
+  @include typo.h2;
+  margin-top: 14px;
+  color: var(--color-heading);
+
+  @include abstract.media-down(sm) {
+    font-size: 1.3rem;
+  }
+}
+
+.text {
+  @include typo.text-regular-15;
+  max-width: 230px;
+  margin-top: 4px;
+  color: var(--color-text);
+}
