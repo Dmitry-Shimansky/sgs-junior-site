@@ -3,14 +3,30 @@
 @use '../../../../styles/base/typography' as typo;
 
 $navy: abstract.palette('navy', 500);
+$wave-back: color.change(color.adjust($navy, $lightness: 50%), $alpha: 0.55);
+$wave-mid: color.change(#6fa9b3, $alpha: 0.6);
+$wave-front: color.change(#c9e2e5, $alpha: 0.75);
+$waves-height-mobile: 340px;
 
 .advantages {
   position: relative;
-  isolation: isolate;
-  padding: 28px 0 40px;
+  // Pull the band up so the kids in the hero stand on the waves.
+  margin-top: -200px;
+  padding: 36px 0 40px;
 
-  @include abstract.media-down(sm) {
+  @include abstract.media-down(lg) {
+    margin-top: -4vw;
     padding: 24px 0 32px;
+
+    // The stacked grid is tall: keep the waves at natural proportions on top
+    // and continue below them with the colour of the waves' bottom edge.
+    &::before {
+      content: '';
+      position: absolute;
+      inset: $waves-height-mobile 0 0;
+      z-index: -1;
+      background: linear-gradient($wave-front, $wave-front), $wave-back;
+    }
   }
 }
 
@@ -20,26 +36,27 @@ $navy: abstract.palette('navy', 500);
   z-index: -1;
   width: 100%;
   height: 100%;
+
+  @include abstract.media-down(lg) {
+    height: $waves-height-mobile;
+  }
 }
 
 .waveBack {
-  fill: color.adjust($navy, $lightness: 55%);
-  opacity: 0.35;
+  fill: $wave-back;
 }
 
 .waveMid {
-  fill: #7fb7bf;
-  opacity: 0.45;
+  fill: $wave-mid;
 }
 
 .waveFront {
-  fill: #b9d9dd;
-  opacity: 0.4;
+  fill: $wave-front;
 }
 
 .title {
-  @include typo.h2;
-  margin-bottom: 20px;
+  @include typo.h1;
+  margin-bottom: 24px;
   color: var(--color-heading);
   text-align: center;
 }
@@ -67,10 +84,10 @@ $navy: abstract.palette('navy', 500);
 // so `lighten` blending turns the black into the navy background.
 .badge {
   display: block;
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   padding: 4px;
-  border: 5px solid var(--color-accent);
+  border: 6px solid var(--color-accent);
   border-radius: 50%;
   background: $navy;
   box-shadow: 0 6px 16px rgb(19 37 74 / 25%);
@@ -102,7 +119,8 @@ $navy: abstract.palette('navy', 500);
 
 .text {
   @include typo.text-regular-15;
-  max-width: 230px;
+  max-width: 240px;
+  font-size: 1rem;
   margin-top: 4px;
   color: var(--color-text);
 }

@@ -65,8 +65,8 @@ export const Advantages = () => {
                   className={styles.icon}
                   src={withBasePath(advantage.image)}
                   alt=""
-                  width="120"
-                  height="120"
+                  width="140"
+                  height="140"
                   loading="lazy"
                 />
               </span>

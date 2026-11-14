@@ -2,6 +2,10 @@
 @use '../../../styles/base/typography' as typo;
 
 .hero {
+  position: relative;
+  // Own stacking context: the advantages waves (z-index: -1) paint above the
+  // hero background but below the kids, while the advantages content paints on top.
+  isolation: isolate;
   background: var(--color-surface);
   overflow: hidden;
 }
@@ -9,7 +13,7 @@
 .inner {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  align-items: center;
+  align-items: start;
   gap: 24px;
   min-height: 274px;
 
@@ -20,7 +24,7 @@
 }
 
 .copy {
-  padding: 40px 0;
+  padding: 48px 0 40px;
 
   @include abstract.media-down(lg) {
     padding: 36px 0 12px;

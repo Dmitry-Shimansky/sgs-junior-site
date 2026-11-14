@@ -19,10 +19,10 @@ export const Hero = () => {
         <div className={styles.media}>
           <img
             className={styles.image}
-            src={withBasePath('/images/kids-bg-removed.png')}
-            alt="SGS Junior: zehn bunte Boxershorts für Jungen mit schwarzem Markenbund"
-            width="1106"
-            height="532"
+            src={withBasePath('/images/kids-full-body-shorts-transparent.png')}
+            alt="Vier fröhliche Jungen in T-Shirts und Shorts"
+            width="1448"
+            height="1086"
             fetchPriority="high"
           />
         </div>
