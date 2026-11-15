@@ -6,7 +6,8 @@ $navy: abstract.palette('navy', 500);
 $wave-back: color.change(color.adjust($navy, $lightness: 50%), $alpha: 0.55);
 $wave-mid: color.change(#6fa9b3, $alpha: 0.6);
 $wave-front: color.change(#c9e2e5, $alpha: 0.75);
-$waves-height-mobile: 340px;
+$tail-height: 180px;
+$tail-height-mobile: 100px;
 
 .advantages {
   position: relative;
@@ -17,28 +18,29 @@ $waves-height-mobile: 340px;
   @include abstract.media-down(lg) {
     margin-top: -4vw;
     padding: 24px 0 32px;
-
-    // The stacked grid is tall: keep the waves at natural proportions on top
-    // and continue below them with the colour of the waves' bottom edge.
-    &::before {
-      content: '';
-      position: absolute;
-      inset: $waves-height-mobile 0 0;
-      z-index: -1;
-      background: linear-gradient($wave-front, $wave-front), $wave-back;
-    }
   }
 }
 
-.waves {
+.waves,
+.tail {
   position: absolute;
-  inset: 0;
+  left: 0;
   z-index: -1;
   width: 100%;
+}
+
+.waves {
+  top: 0;
   height: 100%;
+}
+
+// Hangs below the band, behind the start of the next section (the hero lets it overflow).
+.tail {
+  top: 100%;
+  height: $tail-height;
 
   @include abstract.media-down(lg) {
-    height: $waves-height-mobile;
+    height: $tail-height-mobile;
   }
 }
 

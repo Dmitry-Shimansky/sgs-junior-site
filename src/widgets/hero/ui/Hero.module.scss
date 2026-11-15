@@ -6,8 +6,14 @@
   // Own stacking context: the advantages waves (z-index: -1) paint above the
   // hero background but below the kids, while the advantages content paints on top.
   isolation: isolate;
-  background: var(--color-surface);
-  overflow: hidden;
+  // Fade into the page colour at the bottom so the wave tail meets white, not a hard edge.
+  background: linear-gradient(
+    to bottom,
+    var(--color-surface) calc(100% - 120px),
+    var(--color-bg) 100%
+  );
+  // Clip sideways only: the advantages wave tail hangs below the hero.
+  overflow-x: clip;
 }
 
 .inner {

@@ -31,28 +31,53 @@ const ADVANTAGES: Advantage[] = [
   },
 ]
 
+const WAVES_WIDTH = 1200
+const WAVES_BAND_HEIGHT = 376
+const WAVES_TAIL_HEIGHT = 180
+
+const WavePaths = () => (
+  <>
+    {/* Slate-blue base; its lower edge runs from the band's bottom-right to the tail's bottom-left. */}
+    <path
+      className={styles.waveBack}
+      d="M0 150 C200 90 380 130 560 150 C760 170 980 90 1200 110 L1200 340 C1000 380 780 380 580 420 C380 460 180 520 0 556 Z"
+    />
+    {/* Teal accents: top right and middle left. */}
+    <path
+      className={styles.waveMid}
+      d="M620 125 C800 60 1000 40 1200 60 L1200 230 C1040 250 880 225 760 195 C700 178 650 155 620 125 Z"
+    />
+    <path className={styles.waveMid} d="M0 250 C130 225 270 240 390 285 C290 318 140 330 0 345 Z" />
+    {/* Pale swoosh under the texts. */}
+    <path
+      className={styles.waveFront}
+      d="M0 300 C200 270 420 300 640 290 C860 280 1040 230 1200 220 L1200 340 C1000 380 780 380 580 420 C420 452 220 470 0 480 Z"
+    />
+  </>
+)
+
 export const Advantages = () => {
   return (
     <div className={styles.advantages}>
+      {/* One wave drawing (1200 × 556) split in two: the band behind the advantages
+          and a tail that sweeps down-left behind the next section. */}
       <svg
         className={styles.waves}
-        viewBox="0 0 1200 320"
+        viewBox={`0 0 ${WAVES_WIDTH} ${WAVES_BAND_HEIGHT}`}
         preserveAspectRatio="none"
         aria-hidden="true"
         focusable="false"
       >
-        <path
-          className={styles.waveBack}
-          d="M0 150 C 220 60 420 110 640 120 C 860 130 1020 40 1200 70 L1200 260 C 980 300 760 250 560 280 C 360 310 160 290 0 320 Z"
-        />
-        <path
-          className={styles.waveMid}
-          d="M0 120 C 180 170 360 200 560 170 C 760 140 960 110 1200 150 L1200 230 C 1000 250 800 300 560 290 C 340 280 160 260 0 280 Z"
-        />
-        <path
-          className={styles.waveFront}
-          d="M0 220 C 240 180 460 250 700 240 C 920 230 1060 200 1200 210 L1200 320 L0 320 Z"
-        />
+        <WavePaths />
+      </svg>
+      <svg
+        className={styles.tail}
+        viewBox={`0 ${WAVES_BAND_HEIGHT} ${WAVES_WIDTH} ${WAVES_TAIL_HEIGHT}`}
+        preserveAspectRatio="none"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <WavePaths />
       </svg>
 
       <Container>

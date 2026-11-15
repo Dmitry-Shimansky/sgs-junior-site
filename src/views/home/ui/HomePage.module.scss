@@ -24,6 +24,8 @@
 }
 
 .content {
+  // Positioned so it paints above the hero's overflowing wave tail.
+  position: relative;
   display: grid;
   gap: 40px;
   padding-top: 44px;
