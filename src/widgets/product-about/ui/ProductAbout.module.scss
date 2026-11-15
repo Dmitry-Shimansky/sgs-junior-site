@@ -1,21 +1,270 @@
 @use '../../../styles/abstract' as abstract;
 @use '../../../styles/base/typography' as typo;
 
-.text {
+// Callout layout is drawn on an 820 × 440 grid (same as the leader-line SVG).
+$fig-w: 820;
+$fig-h: 440;
+
+@function x($value) {
+  @return calc($value / $fig-w * 100%);
+}
+
+@function y($value) {
+  @return calc($value / $fig-h * 100%);
+}
+
+@mixin accent-rule($width) {
+  content: '';
+  display: block;
+  width: $width;
+  height: 4px;
+  border-radius: abstract.$radius-pill;
+  background: var(--color-accent);
+}
+
+.section {
+  padding-top: 32px;
+  border-top: 1px solid var(--color-border);
+}
+
+.subtitle {
+  @include typo.text-medium-16;
+  margin-top: -10px;
+  font-size: 1.25rem;
+  color: var(--color-heading);
+
+  &::after {
+    @include accent-rule(84px);
+    margin-top: 12px;
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 32px;
+  margin-top: 24px;
+
+  @include abstract.media-down(xl) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// --- Product with callouts --------------------------------------------------
+
+.figure {
+  position: relative;
+  container-type: inline-size;
+  margin: 0;
+  aspect-ratio: #{$fig-w} / #{$fig-h};
+
+  @include abstract.media-down(md) {
+    aspect-ratio: auto;
+    overflow: clip;
+  }
+}
+
+// The source has transparent padding around the garment (opaque box
+// 269–995 × 215–714 of 1264 × 843): scale and offset it so the garment
+// fills x 185–675 / y 30–367 of the grid.
+.product {
+  position: absolute;
+  top: y(-115);
+  left: x(3);
+  width: x(853);
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+
+  // Stacked layout: crop the transparent padding so the garment spans 80% of the width.
+  @include abstract.media-down(md) {
+    position: static;
+    width: 139.3%;
+    margin: -23.7% 0 -12% -19.6%;
+  }
+}
+
+.leaders {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+
+  polyline {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 2;
+  }
+
+  circle {
+    fill: var(--color-accent);
+  }
+
+  @include abstract.media-down(md) {
+    display: none;
+  }
+}
+
+.callouts {
+  @include abstract.reset-list;
+
+  @include abstract.media-down(md) {
+    display: grid;
+    gap: 20px;
+  }
+}
+
+.callout {
+  position: absolute;
+  // Icon colour (the sprite icon uses currentColor inherited from here).
+  color: var(--color-heading);
+  max-width: 24cqw;
+
+  @include abstract.media-down(md) {
+    position: static;
+    display: grid;
+    grid-template-columns: 63px 1fr;
+    column-gap: 14px;
+    max-width: none;
+  }
+}
+
+.cotton {
+  top: y(22);
+  left: x(20);
+}
+
+.airflow {
+  top: y(76);
+  left: x(660);
+  max-width: 20cqw;
+
+  @include abstract.media-down(md) {
+    max-width: none;
+  }
+}
+
+.stretch {
+  top: y(262);
+  left: x(20);
+  max-width: 21cqw;
+
+  @include abstract.media-down(md) {
+    max-width: none;
+  }
+}
+
+.calloutIcon {
+  display: block;
+  // Icons are drawn at 105 × 70 (3 : 2).
+  width: 10.5cqw;
+  height: 7cqw;
+  margin-bottom: 1.6cqw;
+  // The sprite symbols only set `stroke="currentColor"`; line style comes from here.
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  @include abstract.media-down(md) {
+    grid-row: span 2;
+    width: 63px;
+    height: 42px;
+    margin: 0;
+  }
+}
+
+.calloutTitle {
+  font-size: clamp(0.95rem, 2.4cqw, 1.2rem);
+  font-weight: abstract.$font-weight-700;
+  line-height: 1.2;
+  color: var(--color-heading);
+
+  @include abstract.media-down(md) {
+    font-size: 1.05rem;
+  }
+}
+
+.calloutText {
+  margin-top: 2px;
+  font-size: clamp(0.78rem, 1.85cqw, 0.95rem);
+  line-height: 1.35;
+  color: var(--color-text-muted);
+
+  @include abstract.media-down(md) {
+    font-size: 0.95rem;
+  }
+}
+
+// --- Waistband detail -------------------------------------------------------
+
+.waistband {
+  padding-left: 28px;
+  border-left: 1px solid var(--color-border);
+
+  @include abstract.media-down(xl) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: 28px;
+    align-items: start;
+    padding: 28px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  @include abstract.media-down(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.waistbandImage {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  @include abstract.media-down(xl) {
+    grid-row: span 2;
+  }
+}
+
+.waistbandTitle {
+  @include typo.h1;
+  margin-top: 18px;
+  color: var(--color-heading);
+
+  &::after {
+    @include accent-rule(64px);
+    margin-top: 14px;
+  }
+
+  @include abstract.media-down(xl) {
+    margin-top: 0;
+  }
+
+  @include abstract.media-down(sm) {
+    margin-top: 18px;
+  }
+}
+
+.waistbandText {
   @include typo.text-regular-15;
+  margin-top: 14px;
+  font-size: 1.05rem;
   color: var(--color-text);
 }
 
-.list {
-  @include abstract.reset-list;
-  display: grid;
-  gap: 16px;
-  margin-top: 16px;
-}
+// --- Call to action ---------------------------------------------------------
 
-.item {
+.cta {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: center;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-border);
+
+  > * {
+    width: min(100%, 300px);
+  }
 }

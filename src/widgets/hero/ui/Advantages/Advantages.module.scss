@@ -59,6 +59,13 @@ $waves-height-mobile: 340px;
   margin-bottom: 24px;
   color: var(--color-heading);
   text-align: center;
+  // Soft halo in the hero background colour keeps the text readable over the kids' legs.
+  $halo: abstract.palette('light', 500);
+  text-shadow:
+    0 0 4px $halo,
+    0 0 10px $halo,
+    0 0 18px $halo,
+    0 2px 6px rgb(19 37 74 / 20%);
 }
 
 .list {
