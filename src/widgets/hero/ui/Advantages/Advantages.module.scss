@@ -1,0 +1,166 @@
+@use 'sass:color';
+@use '../../../../styles/abstract' as abstract;
+@use '../../../../styles/base/typography' as typo;
+
+$navy: abstract.palette('navy', 500);
+$wave-back: color.change(color.adjust($navy, $lightness: 50%), $alpha: 0.55);
+$wave-mid: color.change(#6fa9b3, $alpha: 0.6);
+$wave-front: color.change(#c9e2e5, $alpha: 0.75);
+$tail-height: 180px;
+$tail-height-mobile: 100px;
+
+.advantages {
+  position: relative;
+  // Pull the band up so the kids in the hero stand on the waves.
+  margin-top: -200px;
+  padding: 36px 0 40px;
+
+  @include abstract.media-down(lg) {
+    // Title sits at the kids' shins: ~19% of the photo height (photo ≈ 0.75 × width) above its bottom.
+    margin-top: calc(-14vw - 24px);
+    padding: 24px 0 32px;
+  }
+}
+
+.waves,
+.tail,
+.ground {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+.waves {
+  top: 0;
+  height: 100%;
+}
+
+// Hangs below the band, behind the start of the next section (the hero lets it overflow).
+.tail {
+  top: 100%;
+  height: $tail-height;
+
+  @include abstract.media-down(lg) {
+    height: $tail-height-mobile;
+  }
+}
+
+// Tablet/mobile: a solid wave behind the kids' photo, so they stand in front of it.
+// Soles sit ~(14vw + 18px) below the band top and shoe tops ~7.5vw higher; the wave's
+// top edge runs 32–55px below its top, so it rises just above the shoes.
+.ground {
+  display: none;
+
+  @include abstract.media-down(lg) {
+    display: block;
+    top: calc(6.5vw - 40px);
+    // Tall enough for the fade to overlap the stretched band waves (no pale gap).
+    height: 380px;
+    // Solid behind the shoes, then fade into the band waves below.
+    mask-image: linear-gradient(to bottom, #000 35%, transparent);
+
+    // Solid versions of the band colours (as they look over the hero background).
+    .waveBack {
+      fill: color.mix(color.change($wave-back, $alpha: 1), abstract.palette('light', 500), 55%);
+    }
+
+    .waveMid {
+      fill: color.mix(color.change($wave-mid, $alpha: 1), abstract.palette('light', 500), 60%);
+    }
+  }
+}
+
+.content {
+  position: relative;
+}
+
+.waveBack {
+  fill: $wave-back;
+}
+
+.waveMid {
+  fill: $wave-mid;
+}
+
+.waveFront {
+  fill: $wave-front;
+}
+
+.title {
+  @include typo.h1;
+  margin-bottom: 24px;
+  color: var(--color-heading);
+  text-align: center;
+  // Soft halo in the hero background colour keeps the text readable over the kids' legs.
+  $halo: abstract.palette('light', 500);
+  text-shadow:
+    0 0 4px $halo,
+    0 0 10px $halo,
+    0 0 18px $halo,
+    0 2px 6px rgb(19 37 74 / 20%);
+}
+
+.list {
+  @include abstract.reset-list;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+
+  @include abstract.media-down(lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 32px;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+// Navy disc with a gold ring; the icons are white line-art on black,
+// so `lighten` blending turns the black into the navy background.
+.badge {
+  display: block;
+  width: 140px;
+  height: 140px;
+  padding: 4px;
+  border: 6px solid var(--color-accent);
+  border-radius: 50%;
+  background: $navy;
+  box-shadow: 0 6px 16px rgb(19 37 74 / 25%);
+  isolation: isolate;
+
+  @include abstract.media-down(sm) {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+.icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+}
+
+.itemTitle {
+  @include typo.h2;
+  margin-top: 14px;
+  color: var(--color-heading);
+
+  @include abstract.media-down(sm) {
+    font-size: 1.3rem;
+  }
+}
+
+.text {
+  @include typo.text-regular-15;
+  max-width: 240px;
+  font-size: 1rem;
+  margin-top: 4px;
+  color: var(--color-text);
+}

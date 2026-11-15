@@ -24,13 +24,10 @@
 }
 
 .content {
+  // Positioned so it paints above the hero's overflowing wave tail.
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
-  gap: 44px;
+  gap: 40px;
   padding-top: 44px;
   padding-bottom: 44px;
-
-  @include abstract.media-down(xl) {
-    grid-template-columns: 1fr;
-  }
 }

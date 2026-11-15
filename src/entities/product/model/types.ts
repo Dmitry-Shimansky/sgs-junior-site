@@ -7,8 +7,3 @@ export type ProductSet = {
   composition: string
   amazonUrl: string
 }
-
-export type ProductFeature = {
-  text: string
-  badge?: string
-}
