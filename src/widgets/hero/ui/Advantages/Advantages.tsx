@@ -79,8 +79,22 @@ export const Advantages = () => {
       >
         <WavePaths />
       </svg>
+      {/* Tablet/mobile only: a ground wave right under the kids' shoes. */}
+      <svg
+        className={styles.ground}
+        viewBox="0 0 1200 380"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          className={styles.waveBack}
+          d="M0 55 C200 32 420 35 640 45 C860 55 1020 42 1200 32 L1200 380 L0 380 Z"
+        />
+        <path className={styles.waveMid} d="M480 380 C640 160 900 70 1200 55 L1200 380 Z" />
+      </svg>
 
-      <Container>
+      <Container className={styles.content}>
         <h2 className={styles.title}>Gut durch den Alltag</h2>
         <ul className={styles.list}>
           {ADVANTAGES.map(advantage => (

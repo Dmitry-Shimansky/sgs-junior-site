@@ -16,13 +16,15 @@ $tail-height-mobile: 100px;
   padding: 36px 0 40px;
 
   @include abstract.media-down(lg) {
-    margin-top: -4vw;
+    // Title sits at the kids' shins: ~19% of the photo height (photo ≈ 0.75 × width) above its bottom.
+    margin-top: calc(-14vw - 24px);
     padding: 24px 0 32px;
   }
 }
 
 .waves,
-.tail {
+.tail,
+.ground {
   position: absolute;
   left: 0;
   z-index: -1;
@@ -42,6 +44,35 @@ $tail-height-mobile: 100px;
   @include abstract.media-down(lg) {
     height: $tail-height-mobile;
   }
+}
+
+// Tablet/mobile: a solid wave behind the kids' photo, so they stand in front of it.
+// Soles sit ~(14vw + 18px) below the band top and shoe tops ~7.5vw higher; the wave's
+// top edge runs 32–55px below its top, so it rises just above the shoes.
+.ground {
+  display: none;
+
+  @include abstract.media-down(lg) {
+    display: block;
+    top: calc(6.5vw - 40px);
+    // Tall enough for the fade to overlap the stretched band waves (no pale gap).
+    height: 380px;
+    // Solid behind the shoes, then fade into the band waves below.
+    mask-image: linear-gradient(to bottom, #000 35%, transparent);
+
+    // Solid versions of the band colours (as they look over the hero background).
+    .waveBack {
+      fill: color.mix(color.change($wave-back, $alpha: 1), abstract.palette('light', 500), 55%);
+    }
+
+    .waveMid {
+      fill: color.mix(color.change($wave-mid, $alpha: 1), abstract.palette('light', 500), 60%);
+    }
+  }
+}
+
+.content {
+  position: relative;
 }
 
 .waveBack {
