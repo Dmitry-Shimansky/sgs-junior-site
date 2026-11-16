@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="78" height="42" viewBox="13 237 959 515" role="img" aria-label="SGS">
+  <defs>
+    <linearGradient id="sgs-a" gradientUnits="userSpaceOnUse" x1="780" y1="280" x2="470" y2="500">
+      <stop offset="0" stop-color="#e41a15"/><stop offset=".55" stop-color="#ea2c15"/><stop offset="1" stop-color="#e42215"/>
+    </linearGradient>
+    <linearGradient id="sgs-b" gradientUnits="userSpaceOnUse" x1="150" y1="370" x2="720" y2="270">
+      <stop offset="0" stop-color="#df1c0c"/><stop offset=".6" stop-color="#ef3f15"/><stop offset="1" stop-color="#fb4f14"/>
+    </linearGradient>
+    <linearGradient id="sgs-c" gradientUnits="userSpaceOnUse" x1="300" y1="355" x2="415" y2="435">
+      <stop offset="0" stop-color="#e8300f"/><stop offset="1" stop-color="#f43d15"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#sgs-a)" d="M116 394C311.4 238.4 579.1 208 817 262L608 531C493.5 509.5 363.6 443.1 292 350C365.5 407.2 475 434.1 567 438L651 325C468.2 290.2 280.9 299.7 116 394Z"/>
+  <path fill="url(#sgs-b)" d="M116 394C311.4 238.4 579.1 208 817 262C770 262 700 285 620 319.5C447.1 291.5 271.6 305 116 394Z"/>
+  <path fill="url(#sgs-c)" d="M292 350C330.6 380.1 379.2 401.8 430 416.2L391 441C352.6 414.9 318.3 384.2 292 350Z"/>
+  <path fill="#000" d="M320 612H45A32 32 0 0 0 13 644V665A32 32 0 0 0 45 697H275Q284 697 284 706V712Q284 722 274 722H13V752H288A32 32 0 0 0 320 720V699A32 32 0 0 0 288 667H60Q49 667 49 656V651Q49 642 58 642H320ZM646 612H371A32 32 0 0 0 339 644V720A32 32 0 0 0 371 752H614A32 32 0 0 0 646 720V699A32 32 0 0 0 614 667H454V697H601Q610 697 610 706V712Q610 722 600 722H386Q375 722 375 711V653Q375 642 386 642H646ZM972 612H697A32 32 0 0 0 665 644V665A32 32 0 0 0 697 697H927Q936 697 936 706V712Q936 722 926 722H665V752H940A32 32 0 0 0 972 720V699A32 32 0 0 0 940 667H712Q701 667 701 656V651Q701 642 710 642H972Z"/>
+</svg>
