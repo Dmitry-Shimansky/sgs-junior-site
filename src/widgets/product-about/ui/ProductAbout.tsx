@@ -24,7 +24,7 @@ const CALLOUTS: Callout[] = [
     id: 'airflow',
     title: 'Atmungsaktiv',
     text: 'Luftdurchlässiges Material für den Alltag.',
-    iconId: 'airflow',
+    iconId: 'wind-arrows',
   },
   {
     id: 'stretch',
@@ -79,7 +79,7 @@ export const ProductAbout = () => {
         <div className={styles.waistband}>
           <img
             className={styles.waistbandImage}
-            src={withBasePath('/images/waistband-detail.jpg')}
+            src={withBasePath('/images/waistband.png')}
             alt="Nahaufnahme des schwarzen Markenbunds mit weißem SGS-Logo"
             width="640"
             height="392"

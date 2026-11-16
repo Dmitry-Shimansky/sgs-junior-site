@@ -13,6 +13,22 @@
   min-height: 66px;
 }
 
+.logo {
+  display: block;
+  flex-shrink: 0;
+
+  &:focus-visible {
+    @include abstract.focus-ring(var(--color-accent), 4px);
+  }
+}
+
+// The logo SVG is 959 × 515.
+.logoIcon {
+  display: block;
+  width: 86px;
+  height: 46px;
+}
+
 .nav {
   @include typo.text-medium-16;
   display: flex;
