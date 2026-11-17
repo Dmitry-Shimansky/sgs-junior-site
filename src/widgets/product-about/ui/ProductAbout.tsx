@@ -68,7 +68,7 @@ export const ProductAbout = () => {
           <ul className={styles.callouts}>
             {CALLOUTS.map(({ id, title, text, iconId }) => (
               <li key={id} className={clsx(styles.callout, styles[id])}>
-                <Icon iconId={iconId} viewBox="0 0 105 70" className={styles.calloutIcon} />
+                <Icon iconId={iconId} viewBox="0 0 90 75" className={styles.calloutIcon} />
                 <h3 className={styles.calloutTitle}>{title}</h3>
                 <p className={styles.calloutText}>{text}</p>
               </li>
