@@ -26,7 +26,8 @@
 .logoIcon {
   display: block;
   width: 86px;
-  height: 46px;
+  height: auto;
+  aspect-ratio: 959 / 515;
 }
 
 .nav {

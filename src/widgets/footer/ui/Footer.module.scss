@@ -1,3 +1,4 @@
+@use '../../../styles/abstract' as abstract;
 @use '../../../styles/base/typography' as typo;
 
 .inner {
@@ -8,6 +9,23 @@
   gap: 16px 32px;
   padding: 10px 0 18px;
   border-top: 1px solid var(--color-border);
+}
+
+.logo {
+  display: block;
+  flex-shrink: 0;
+
+  &:focus-visible {
+    @include abstract.focus-ring(var(--color-accent), 4px);
+  }
+}
+
+// The sprite symbol is a wide 824 × 122.5 lockup (mark + lettering side by side).
+.logoIcon {
+  display: block;
+  width: 130px;
+  height: auto;
+  aspect-ratio: 824 / 122.5;
 }
 
 .links {
