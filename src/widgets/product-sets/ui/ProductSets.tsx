@@ -1,24 +1,24 @@
 import { PRODUCT_SETS, ProductSetCard } from '@/src/entities/product'
 import { ANCHOR } from '@/src/shared/constants'
-import { Button, Section } from '@/src/shared/ui'
-import styles from './ProductSets.module.scss'
+import { Button, Section, Slider } from '@/src/shared/ui'
 
 export const ProductSets = () => {
   return (
     <Section id={ANCHOR.PRODUCTS} title="Unsere Sets">
-      <div className={styles.grid}>
+      <Slider label="Unsere Sets" prevLabel="Vorheriges Set" nextLabel="Nächstes Set">
         {PRODUCT_SETS.map(product => (
-          <ProductSetCard
-            key={product.id}
-            product={product}
-            action={
-              <Button href={product.amazonUrl} external>
-                Auf Amazon kaufen
-              </Button>
-            }
-          />
+          <li key={product.id}>
+            <ProductSetCard
+              product={product}
+              action={
+                <Button href={product.amazonUrl} external>
+                  Auf Amazon kaufen
+                </Button>
+              }
+            />
+          </li>
         ))}
-      </div>
+      </Slider>
     </Section>
   )
 }

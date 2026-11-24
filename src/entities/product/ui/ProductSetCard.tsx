@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import type { ReactNode } from 'react'
 import { withBasePath } from '@/src/shared/lib'
 import type { ProductSet } from '../model/types'
@@ -17,12 +18,12 @@ export const ProductSetCard = (props: ProductSetCardProps) => {
         {product.title}
         {product.subtitle && <span className={styles.subtitle}>{product.subtitle}</span>}
       </h3>
-      <div className={styles.photo}>
+      <div className={clsx(styles.photo, product.imageFit === 'contain' && styles.contain)}>
         <img
           src={withBasePath(product.image)}
           alt={product.alt}
-          width="1537"
-          height="1023"
+          width="1254"
+          height="1254"
           loading="lazy"
         />
       </div>
