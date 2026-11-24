@@ -1,0 +1,101 @@
+@use '../../../styles/abstract' as abstract;
+
+$gap: 24px;
+// Room inside the scroll box so slide shadows aren't clipped. The inline value must stay
+// below $gap and the container padding, or neighbouring slides would peek in.
+$bleed-top: 12px;
+$bleed-inline: 18px;
+$bleed-bottom: 26px;
+
+.slider {
+  --slides: 3;
+  --arrow-size: 56px;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+
+  @include abstract.media-down(lg) {
+    --slides: 2;
+  }
+
+  @include abstract.media-down(sm) {
+    --slides: 1;
+    --arrow-size: 44px;
+  }
+}
+
+.track {
+  @include abstract.reset-list;
+  position: relative;
+  display: flex;
+  gap: $gap;
+  margin: (-$bleed-top) (-$bleed-inline) (-$bleed-bottom);
+  padding: $bleed-top $bleed-inline $bleed-bottom;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-padding-inline: $bleed-inline;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+
+  > * {
+    flex: 0 0 calc((100% - #{$gap} * (var(--slides) - 1)) / var(--slides));
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+}
+
+// Centred on the outer edges of the first and last visible slide.
+.arrow {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  padding: 0;
+  border: 2px solid var(--color-heading);
+  border-radius: 50%;
+  background: var(--color-bg);
+  box-shadow: 0 4px 12px rgb(19 37 74 / 18%);
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: var(--color-surface);
+  }
+
+  &:focus-visible {
+    @include abstract.focus-ring;
+  }
+}
+
+.prev {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.next {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+// Phone: the side gutter is narrower than half an arrow, so keep them on screen.
+@include abstract.media-down(sm) {
+  .prev {
+    left: 6px;
+  }
+
+  .next {
+    right: 6px;
+  }
+}

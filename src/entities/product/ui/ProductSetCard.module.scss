@@ -41,6 +41,11 @@
     object-fit: cover;
     object-position: 50% 46%;
   }
+
+  &.contain img {
+    object-fit: contain;
+    object-position: center;
+  }
 }
 
 .composition {
