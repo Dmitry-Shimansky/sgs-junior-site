@@ -1,33 +1,34 @@
-import { withBasePath } from '@/src/shared/lib'
 import { Container } from '@/src/shared/ui'
+import { Icon } from '@/src/shared/ui/Icon/Icon'
 import styles from './Advantages.module.scss'
 
 type Advantage = {
   title: string
   text: string
-  image: string
+  /** Symbol id in `public/icons-sprite.svg` (298 × 298 navy disc). */
+  iconId: string
 }
 
 const ADVANTAGES: Advantage[] = [
   {
     title: 'Weich',
     text: '95 % Baumwolle für ein angenehmes Hautgefühl.',
-    image: '/images/advantage-1-bg.png',
+    iconId: 'feather-hand',
   },
   {
     title: 'Atmungsaktiv',
     text: 'Luftdurchlässige Baumwolle für jeden Tag.',
-    image: '/images/advantage-2-bg.png',
+    iconId: 'breathable-fabric',
   },
   {
     title: 'Flexibel',
     text: '5 % Elasthan für viel Bewegungsfreiheit.',
-    image: '/images/advantage-3-bg.png',
+    iconId: 'stretch-fabric',
   },
   {
     title: 'Pflegeleicht',
     text: 'Für die Maschinenwäsche geeignet.',
-    image: '/images/advantage-4-bg.png',
+    iconId: 'washing-machine',
   },
 ]
 
@@ -99,15 +100,9 @@ export const Advantages = () => {
         <ul className={styles.list}>
           {ADVANTAGES.map(advantage => (
             <li key={advantage.title} className={styles.item}>
-              <span className={styles.badge}>
-                <img
-                  className={styles.icon}
-                  src={withBasePath(advantage.image)}
-                  alt=""
-                  width="140"
-                  height="140"
-                  loading="lazy"
-                />
+              {/* Decorative: the title below names the advantage. */}
+              <span className={styles.badge} aria-hidden="true">
+                <Icon iconId={advantage.iconId} viewBox="0 0 298 298" className={styles.icon} />
               </span>
               <h3 className={styles.itemTitle}>{advantage.title}</h3>
               <p className={styles.text}>{advantage.text}</p>
